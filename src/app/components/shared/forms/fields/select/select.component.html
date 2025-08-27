@@ -1,0 +1,13 @@
+<app-field-wrapper [model]="model" [control]="control">
+  <p-select
+    [id]="model.name"
+    [name]="model.name"
+    optionLabel="label"
+    optionValue="value"
+    [formControl]="control"
+    [options]="model.options"
+    [showClear]="true"
+    [placeholder]="model.placeholder || 'common.phrases.selectAnOption' | translate"
+    class="w-full"
+  />
+</app-field-wrapper>

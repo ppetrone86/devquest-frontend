@@ -1,0 +1,27 @@
+<div class="page-content">
+  <div class="grid grid-cols-1">
+    <p-card [styleClass]="'border'">
+      <!-- Breadcrumb -->
+      <p-breadcrumb [model]="breadcrumbItems" class="mb-4"></p-breadcrumb>
+
+      <div class="grid grid-cols-1 gap-4">
+        @if (!loading) {
+          <ng-container *ngIf="user() as user">
+            <app-form-viewport
+              [entity]="'user-details'"
+              [inputData]="user"
+              hideCard
+              class="pl-4 pr-4"
+            ></app-form-viewport>
+          </ng-container>
+
+          @if (isNewUser) {
+            <app-form-viewport [entity]="'user-details'" hideCard class="pl-4 pr-4"></app-form-viewport>
+          }
+        } @else {
+          <p-skeleton width="100%" height="200px"></p-skeleton>
+        }
+      </div>
+    </p-card>
+  </div>
+</div>

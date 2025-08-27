@@ -1,0 +1,87 @@
+{
+  "title": "Job Application Form",
+  "subtitle": "Apply for a job position",
+  "fields": [
+    {
+      "type": "text",
+      "name": "applicantName",
+      "label": "Applicant Name",
+      "placeholder": "Enter your name",
+      "validators": [
+        {
+          "type": "required",
+          "message": "Name is required"
+        }
+      ]
+    },
+    {
+      "type": "email",
+      "name": "applicantEmail",
+      "label": "Email Address",
+      "placeholder": "Enter your email",
+      "validators": [
+        {
+          "type": "required",
+          "message": "Email is required"
+        }
+      ]
+    },
+    {
+      "type": "file",
+      "name": "resume",
+      "label": "Upload Resume",
+      "validators": [
+        {
+          "type": "required",
+          "message": "Please upload your resume"
+        }
+      ]
+    },
+    {
+      "type": "select",
+      "name": "jobPosition",
+      "label": "Position Applied For",
+      "options": [
+        { "value": "dev", "label": "Developer" },
+        { "value": "des", "label": "Designer" },
+        { "value": "pm", "label": "Project Manager" }
+      ],
+      "validators": [
+        {
+          "type": "required",
+          "message": "Please select a job position"
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "availability",
+      "label": "Availability",
+      "options": [
+        { "value": "full-time", "label": "Full-Time" },
+        { "value": "part-time", "label": "Part-Time" },
+        { "value": "contract", "label": "Contract" }
+      ],
+      "validators": [
+        {
+          "type": "required",
+          "message": "Please select your availability"
+        }
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "type": "submit",
+      "label": "Submit Application",
+      "actionUrl": "/api/job/apply"
+    },
+    {
+      "type": "reset",
+      "label": "Clear"
+    }
+  ],
+  "layout": {
+    "columns": 1
+  }
+}

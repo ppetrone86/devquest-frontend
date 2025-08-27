@@ -1,0 +1,74 @@
+@if (!hideCard) {
+  <p-card [header]="config()?.title || '' | translate" [subheader]="config()?.subtitle || '' | translate">
+    <ng-container *ngTemplateOutlet="formTemplate"></ng-container>
+  </p-card>
+} @else {
+  <ng-container *ngTemplateOutlet="formTemplate"></ng-container>
+}
+
+<ng-template #formTemplate>
+  <form [formGroup]="form()" class="dynamic-form gap-4 pt-4" [style]="getColumnsStyle('form-columns', model?.columns)">
+    @for (field of model?.fields; track field) {
+      <fieldset class="form-group" [style]="getColumnsStyle('form-column-span', field.columns)">
+        @switch (field.type) {
+          @case (fieldType.TEXT) {
+            <app-text-input [model]="field" [control]="getControl(field.name)" />
+          }
+          @case (fieldType.EMAIL) {
+            <app-text-input [model]="field" [control]="getControl(field.name)" />
+          }
+          @case (fieldType.PASSWORD) {
+            <app-password-input [model]="field" [control]="getControl(field.name)" />
+          }
+          @case (fieldType.TEXTAREA) {
+            <app-text-area [model]="field" [control]="getControl(field.name)" />
+          }
+          @case (fieldType.NUMBER) {
+            <app-number-input [model]="field" [control]="getControl(field.name)" />
+          }
+          @case (fieldType.DATE) {
+            <app-date-time-input [model]="field" [control]="getControl(field.name)" hideTime />
+          }
+          @case (fieldType.TIME) {
+            <app-date-time-input [model]="field" [control]="getControl(field.name)" hideDate />
+          }
+          @case (fieldType.DATE_TIME) {
+            <app-date-time-input [model]="field" [control]="getControl(field.name)" />
+          }
+          @case (fieldType.FILE) {
+            <app-file-input [model]="field" [control]="getControl(field.name)" />
+          }
+          @case (fieldType.SELECT) {
+            <app-select [model]="field" [control]="getControl(field.name)" />
+          }
+          @case (fieldType.RADIO) {
+            <app-radio-group [model]="field" [control]="getControl(field.name)" />
+          }
+          @case (fieldType.CHECKBOX) {
+            <app-checkbox [model]="field" [control]="getControl(field.name)" />
+          }
+          @case (fieldType.HIDDEN) {
+            <app-hidden-input [model]="field" [control]="getControl(field.name)" />
+          }
+          @default {
+            <p>{{ field.value }}</p>
+          }
+        }
+      </fieldset>
+    }
+  </form>
+
+  <!-- Form Actions -->
+  <div class="mt-4 flex items-center justify-end gap-2">
+    @for (action of model?.actions; track action) {
+      <p-button
+        [type]="action.type"
+        (click)="onActionClick(action)"
+        [severity]="action.type === 'submit' ? 'primary' : 'secondary'"
+        [disabled]="action.type !== 'reset' && form().invalid"
+      >
+        {{ action.label | translate }}
+      </p-button>
+    }
+  </div>
+</ng-template>

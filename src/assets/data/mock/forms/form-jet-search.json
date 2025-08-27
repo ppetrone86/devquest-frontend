@@ -1,0 +1,130 @@
+{
+  "title": "JET Where Used",
+  "subtitle": "Search for item usage details",
+  "columns": {
+    "md": 4,
+    "xl": 4,
+    "2xl": 2
+  },
+  "fields": [
+    {
+      "type": "text",
+      "name": "jobPos",
+      "label": "Job/Pos",
+      "placeholder": "Enter Job/Pos",
+      "validators": []
+    },
+    {
+      "type": "text",
+      "name": "itemNumber",
+      "label": "Item Number",
+      "placeholder": "Enter Item Number",
+      "validators": []
+    },
+    {
+      "type": "select",
+      "name": "jetProduct",
+      "label": "Jet Product",
+      "options": [],
+      "validators": []
+    },
+    {
+      "type": "select",
+      "name": "flowType",
+      "label": "Flow Type",
+      "options": [],
+      "validators": []
+    },
+    {
+      "type": "select",
+      "name": "machine",
+      "label": "Machine",
+      "options": [],
+      "validators": []
+    },
+    {
+      "type": "select",
+      "name": "familyCode",
+      "label": "Family Code",
+      "options": [],
+      "validators": []
+    },
+    {
+      "type": "select",
+      "name": "standard",
+      "label": "Standard",
+      "options": [],
+      "validators": []
+    },
+    {
+      "type": "text",
+      "name": "machineCode",
+      "label": "Machine Code",
+      "placeholder": "Enter Machine Code",
+      "validators": []
+    },
+    {
+      "type": "text",
+      "name": "material1",
+      "label": "Material 1",
+      "placeholder": "Enter Material",
+      "validators": []
+    },
+    {
+      "type": "select",
+      "name": "lineType",
+      "label": "Line Type",
+      "options": [],
+      "validators": []
+    },
+    {
+      "type": "select",
+      "name": "gLClass",
+      "label": "G/L Class",
+      "options": [],
+      "validators": []
+    },
+    {
+      "type": "select",
+      "name": "supplyType",
+      "label": "Supply Type",
+      "options": [],
+      "validators": []
+    },
+    {
+      "type": "select",
+      "name": "stockingType",
+      "label": "Stocking Type",
+      "options": [],
+      "validators": []
+    },
+    {
+      "type": "select",
+      "name": "spareType",
+      "label": "Spare Type",
+      "options": [],
+      "validators": []
+    },
+    {
+      "type": "select",
+      "name": "spareSubType",
+      "label": "Spare Sub Type",
+      "options": [],
+      "validators": []
+    }
+  ],
+  "actions": [
+    {
+      "type": "submit",
+      "label": "Search",
+      "actionUrl": "/api/search-item"
+    },
+    {
+      "type": "reset",
+      "label": "Clear"
+    }
+  ],
+  "layout": {
+    "columns": 2
+  }
+}

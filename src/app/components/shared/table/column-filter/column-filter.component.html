@@ -1,0 +1,25 @@
+<p-columnFilter
+  type="text"
+  [field]="field"
+  [showOperator]="false"
+  [showAddButton]="false"
+  [showApplyButton]="false"
+  [showClearButton]="false"
+>
+  <ng-template #footer>
+    <div class="flex w-full justify-between">
+      <p-button
+        (click)="clearFilter()"
+        [label]="'components.customColumnFilter.filter.clear' | translate"
+        styleClass="p-button-sm p-button-text"
+        [severity]="'contrast'"
+      ></p-button>
+
+      <p-button
+        (click)="applyFilter()"
+        [label]="'components.customColumnFilter.filter.apply' | translate"
+        styleClass="p-button-sm p-button-text"
+      ></p-button>
+    </div>
+  </ng-template>
+</p-columnFilter>

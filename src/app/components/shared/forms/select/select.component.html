@@ -1,0 +1,17 @@
+<p-floatlabel variant="on">
+  <p-select
+    id="{{ model.name }}"
+    name="{{ model.name }}"
+    optionLabel="label"
+    optionValue="value"
+    [formControl]="control"
+    [options]="model.options"
+    [showClear]="true"
+    [placeholder]="model.placeholder || ('common.phrases.selectAnOption' | translate)"
+    class="w-full"
+    [ngClass]="{ 'ng-dirty': control.invalid }"
+  >
+  </p-select>
+  <label for="{{ model.name }}">{{ model.label }}</label>
+</p-floatlabel>
+<app-field-errors [control]="control" />

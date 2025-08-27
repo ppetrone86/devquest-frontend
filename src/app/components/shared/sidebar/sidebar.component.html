@@ -1,0 +1,14 @@
+<p-drawer
+  [visible]="visible()"
+  [modal]="false"
+  [dismissible]="false"
+  [closable]="false"
+  [baseZIndex]="800"
+  styleClass="z-40 fixed rounded-xl shadow-lg w-sidebar top-sidebar-top left-sidebar-space right-sidebar-space-neg bottom-sidebar-space h-auto"
+>
+  <ng-template pTemplate="headless">
+    <div class="h-full overflow-y-auto">
+      <app-menu />
+    </div>
+  </ng-template>
+</p-drawer>

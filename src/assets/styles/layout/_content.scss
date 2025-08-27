@@ -1,0 +1,21 @@
+.layout-main-container,
+.layout-full-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  justify-content: space-between;
+  padding: 1rem;
+  transition: margin-left $transitionDuration;
+}
+
+.layout-full-container {
+  background: url("/assets/images/impresoft-background.png") no-repeat top right fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+.layout-main {
+  flex: 1 1 auto;
+}

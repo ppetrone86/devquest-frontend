@@ -1,0 +1,47 @@
+<p-card [styleClass]="'border'">
+  <p-table [value]="products" [tableStyle]="{ 'min-width': '60rem' }">
+    <ng-template #header>
+      <tr>
+        <th pSortableColumn="code">
+          {{ 'components.productTable.columns.code' | translate }}
+          <p-sortIcon field="code" />
+        </th>
+        <th pSortableColumn="name">
+          {{ 'components.productTable.columns.name' | translate }}
+          <p-sortIcon field="name" />
+        </th>
+        <th></th>
+        <th pSortableColumn="category">
+          {{ 'components.productTable.columns.price' | translate }}
+          <p-sortIcon field="price" />
+        </th>
+        <th pSortableColumn="quantity">
+          {{ 'components.productTable.columns.category' | translate }}
+          <p-sortIcon field="category" />
+        </th>
+        <th pSortableColumn="quantity">
+          {{ 'components.productTable.columns.reviews' | translate }}
+          <p-sortIcon field="rating" />
+        </th>
+        <th>Action</th>
+      </tr>
+    </ng-template>
+    <ng-template #body let-product>
+      <tr>
+        <td> {{ product.code || product.id }} - {{ product.title }}</td>
+        <td> {{ product.description }}</td>
+        <td><img [src]="product.images[0]" [alt]="product.name" width="100" class="shadow-4" /></td>
+        <td>{{ product.price | currency: 'EUR' }}</td>
+        <td>{{ product.category }}</td>
+        <td>
+          <p-rating [ngModel]="product.rating" [readonly]="true"></p-rating>
+        </td>
+        <td>
+          @for (action of actions; track action) {
+            <p-button [icon]="action.icon" [severity]="action.severity" (onClick)="action.callback(product)" rounded />
+          }
+        </td>
+      </tr>
+    </ng-template>
+  </p-table>
+</p-card>

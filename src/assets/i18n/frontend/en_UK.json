@@ -1,0 +1,491 @@
+{
+  "errors": {
+    "400_badRequest": "The request is invalid.",
+    "401_unauthorized": "Authentication is required or invalid.",
+    "403_forbidden": "Access denied.",
+    "404_notFound": "Resource not found.",
+    "408_requestTimeout": "Request timeout.",
+    "429_tooManyRequests": "Too many requests in a short period.",
+    "500_internalServerError": "Generic server error.",
+    "502_badGateway": "Bad gateway, communication issue between servers.",
+    "503_serviceUnavailable": "Service unavailable (typically due to maintenance or overload).",
+    "504_gatewayTimeout": "Timeout while communicating with another server.",
+    "serverNotResponding": "💀 The server is not responding!",
+    "unknownError": "An unknown error occurred.",
+    "applicationError": "Application error: {{errorMessage}}",
+    "noRefreshToken": "No refresh token available. Please log in again.",
+    "failedToRefreshToken": "Failed to refresh token. Please log in again.",
+    "pkceGenerationFailed": "Failed to generate PKCE state: Missing codeVerifier, codeChallenge, state, or nonce.",
+    "codeOrVerifierMissing": "Code or Code Verifier is missing.",
+    "authProviderConnectionFailed": "Failed to connect to the authentication provider.",
+    "authNoPermissionsAssigned": "No permissions are associated with your account. Please contact an administrator."
+  },
+  "entities": {
+    "chats": {
+      "errors": {
+        "chatNotSelected": "You need to select a chat to send messages.",
+        "chatClosed": "The chat is closed: you cannot send messages.",
+        "chatAlreadyEvaluated": "The chat has already been evaluated: you cannot change the evaluation.",
+        "chatNewEvaluationNotAllowed": "You cannot evaluate a newly created chat."
+      }
+    }
+  },
+  "common": {
+    "uiLabels": {
+      "startsWith": "Starts with",
+      "contains": "Contains",
+      "notContains": "Does not contain",
+      "endsWith": "Ends with",
+      "equals": "Equals",
+      "notEquals": "Not equals",
+      "noFilter": "No filter",
+      "lt": "Less than",
+      "lte": "Less than or equal to",
+      "gt": "Greater than",
+      "gte": "Greater than or equal to",
+      "dateIs": "Date is",
+      "dateIsNot": "Date is not",
+      "dateBefore": "Date before",
+      "dateAfter": "Date after",
+      "custom": "Custom",
+      "clear": "Clear",
+      "apply": "Apply",
+      "matchAll": "Match all",
+      "matchAny": "Match any",
+      "addRule": "Add rule",
+      "removeRule": "Remove rule",
+      "accept": "Accept",
+      "reject": "Reject",
+      "choose": "Choose",
+      "upload": "Upload",
+      "cancel": "Cancel",
+      "dayNames": ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+      "dayNamesShort": ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"],
+      "dayNamesMin": ["Su", "Mo", "Tu", "We", "Th", "Fr", "Sa"],
+      "monthNames": [
+        "January",
+        "February",
+        "March",
+        "April",
+        "May",
+        "June",
+        "July",
+        "August",
+        "September",
+        "October",
+        "November",
+        "December"
+      ],
+      "monthNamesShort": ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
+      "today": "Today",
+      "weekHeader": "Wk"
+    },
+    "phrases": {
+      "selectAnOption": "Select an option"
+    },
+    "fieldValidators": {
+      "required": "This field is required.",
+      "minLength": "The field must have at least {{value}} characters.",
+      "maxLength": "The field cannot exceed {{value}} characters.",
+      "min": "The value must be greater than or equal to {{value}}.",
+      "max": "The value must be less than or equal to {{value}}.",
+      "pattern": "The field format is invalid.",
+      "email": "Please enter a valid email address.",
+      "url": "Please enter a valid URL.",
+      "date": "Please enter a valid date.",
+      "file": "Please upload a valid file.",
+      "custom": "Custom validation error.",
+      "async": {
+        "emailMissMatch": "Emails do not match",
+        "passwordMissMatch": "Passwords do not match",
+        "regexValidation": "The format of the value is not valid."
+      }
+    },
+    "actions": {
+      "submit": {
+        "title": "Save",
+        "tooltip": "Save the information provided in the form"
+      },
+      "applyFilters": {
+        "title": "Apply",
+        "tooltip": "Apply the filters"
+      },
+      "reset": {
+        "title": "Clear",
+        "tooltip": "Clear the form"
+      }
+    },
+    "order": {
+      "day": "Orders per day",
+      "month": "Orders per month",
+      "total": "Total Orders",
+      "earning": "Total earnings",
+      "product": "Total products",
+      "pricesAndProducts": "Products and earnings"
+    },
+    "user": {},
+    "post": {
+      "tag": "Posts by tag"
+    },
+    "product": {
+      "category": "Products by category"
+    }
+  },
+  "menu": {
+    "section": {
+      "home": "Home",
+      "ai": "AI",
+      "entities": "Entities",
+      "dynamic_form": "Dynamic forms",
+      "test": "Test"
+    },
+    "dashboard": "Dashboard",
+    "chat": "Chat",
+    "users": "Users",
+    "products": "Products",
+    "user_registration": "User registration",
+    "event_registration": "Event registration",
+    "job_application": "Job application",
+    "expense_report": "Expense claim",
+    "product_feedback": "Product feedback",
+    "jet_search": "JET - Where used?",
+    "currency_input": "Currency input",
+    "components": "Components"
+  },
+  "messages": {
+    "summary": {
+      "success": "Operation succeeded",
+      "error": "Operation failed",
+      "warning": "Warning",
+      "info": "Info"
+    },
+    "detail": {
+      "success": "Operation done successfully",
+      "error": "Operation failed due to some reason.",
+      "warning": "Pay attention, warning presence",
+      "info": "Info sample text"
+    }
+  },
+  "components": {
+    "table": {
+      "columns": {
+        "actions": "Actions"
+      },
+      "emptyMessage": "No items available to display."
+    },
+    "customColumnFilter": {
+      "filter": {
+        "apply": "Apply",
+        "clear": "Clear"
+      }
+    },
+    "languageSwitcher": {
+      "it_IT": "Italian",
+      "en_UK": "English (UK)",
+      "en_US": "English (US)"
+    },
+    "login": {
+      "title": "Welcome back!",
+      "button": "Login",
+      "divider": "Or",
+      "fields": {
+        "email": {
+          "label": "Email",
+          "placeholder": "Type email",
+          "errors": {
+            "required": "Email value must be provided",
+            "invalid": "Type a valid email address"
+          }
+        },
+        "password": {
+          "label": "Password",
+          "placeholder": "Type password",
+          "errors": {
+            "required": "Password value must be provided"
+          }
+        }
+      }
+    },
+    "notFoundPage": {
+      "title": "Not found",
+      "message": "We couldn't find the page you were looking for.",
+      "buttons": {
+        "home": {
+          "label": "Go Home",
+          "title": "Click here to go home"
+        }
+      }
+    },
+    "notAuthorizedPage": {
+      "title": "Not authorized",
+      "message": "You don't have the permissions required to access this page.",
+      "buttons": {
+        "home": {
+          "label": "Go Home",
+          "title": "Click here to go home"
+        }
+      }
+    },
+    "topbar": {
+      "buttons": {
+        "buttonProfile": {
+          "label": "Profile"
+        },
+        "buttonLogout": {
+          "label": "Logout"
+        },
+        "buttonLogin": {
+          "label": "Login"
+        }
+      }
+    },
+    "authProcessing": {
+      "loading": "Loading...",
+      "redirect": "Redirect in progress"
+    },
+    "productCard": {
+      "title": "Products"
+    },
+    "userCard": {
+      "title": "Users"
+    },
+    "orderCard": {
+      "title": "Orders"
+    },
+    "postCard": {
+      "title": "Posts"
+    },
+    "productTable": {
+      "title": "Products",
+      "fields": {
+        "search": {
+          "placeholder": "Search..."
+        }
+      },
+      "columns": {
+        "code": "Code",
+        "name": "Name",
+        "price": "Price",
+        "category": "Category",
+        "reviews": "Reviews",
+        "status": "Status"
+      }
+    },
+    "userTable": {
+      "title": "User List",
+      "fields": {
+        "search": {
+          "placeholder": "Search user..."
+        }
+      },
+      "columns": {
+        "fullName": "Full Name",
+        "email": "Email",
+        "firstName": "First Name",
+        "lastName": "Last Name",
+        "gender": "Gender",
+        "phone": "Phone",
+        "birthDate": "Birth Date"
+      },
+      "actions": {
+        "newUser": "New user",
+        "editUser": "Edit user",
+        "deleteUser": "Delete user"
+      }
+    },
+    "usersSearchForm": {
+      "fields": {
+        "fullName": {
+          "label": "Full name",
+          "placeholder": "Filter by full name"
+        },
+        "email": {
+          "label": "Email",
+          "placeholder": "Filter by email"
+        },
+        "gender": {
+          "label": "Gender",
+          "placeholder": "Filter by gender",
+          "options": {
+            "male": "Male",
+            "female": "Female",
+            "other": "Other"
+          }
+        },
+        "phone": {
+          "label": "Phone",
+          "placeholder": "Filter by phone"
+        }
+      }
+    },
+    "chatListWrapper": {
+      "chatTitles": {
+        "today": "Today",
+        "yesterday": "Yesterday",
+        "otherDays": "Previous chats",
+        "archived": "Archived"
+      },
+      "buttons": {
+        "new": {
+          "title": "New chat",
+          "name": "New chat"
+        }
+      },
+      "messages": {
+        "emptyList": "No chats available"
+      }
+    },
+    "chatMessage": {
+      "welcomeMessage": "Welcome! What can I do for you?",
+      "archivedMessage": "This chat has been archived and is no longer possible to send messages."
+    },
+    "chatInput": {
+      "fields": {
+        "message": "Type a message..."
+      },
+      "buttons": {
+        "sendMessage": {
+          "title": "Send message",
+          "name": "Send"
+        }
+      }
+    },
+    "chatActions": {
+      "archive": {
+        "label": "Archive",
+        "title": "Archive this chat"
+      },
+      "delete": {
+        "label": "Delete",
+        "title": "Delete this chat"
+      },
+      "evaluate": {
+        "title": "How would you rate this chat?"
+      }
+    },
+    "chatArchiveDialog": {
+      "header": "Are you sure?",
+      "message": "Please confirm to proceed.",
+      "buttons": {
+        "accept": {
+          "title": "Yes, continue.",
+          "tooltip": "Yes, proceed with archiving this chat."
+        },
+        "reject": {
+          "title": "No, I changed my mind.",
+          "tooltip": "No, I am not sure."
+        }
+      }
+    },
+    "chatDeleteDialog": {
+      "header": "Are you sure?",
+      "message": "Please confirm to proceed.",
+      "buttons": {
+        "accept": {
+          "title": "Yes, continue.",
+          "tooltip": "Yes, proceed with deleting this chat."
+        },
+        "reject": {
+          "title": "No, I changed my mind.",
+          "tooltip": "No, I am not sure."
+        }
+      }
+    },
+    "profilePage": {
+      "title": "Your Profile"
+    },
+    "userDetails": {
+      "form": {
+        "title": "Your Personal Information",
+        "subtitle": "Keep your details up to date for a better experience"
+      },
+      "fields": {
+        "firstname": {
+          "label": "First Name",
+          "placeholder": "Enter your first name",
+          "helpText": "Provide your given name"
+        },
+        "lastname": {
+          "label": "Last Name",
+          "placeholder": "Enter your last name",
+          "helpText": "Provide your surname"
+        },
+        "email": {
+          "label": "Email",
+          "placeholder": "Enter your email",
+          "helpText": "Provide a valid email address"
+        },
+        "confirmEmail": {
+          "label": "Confirm Email",
+          "placeholder": "Re-enter your email",
+          "helpText": "Ensure the email address matches the one entered above"
+        },
+        "age": {
+          "label": "Age",
+          "placeholder": "Provide your age",
+          "helpText": "The minimum age allowed is 18 years"
+        },
+        "amount": {
+          "label": "Amount",
+          "placeholder": "Provide your amount",
+          "helpText": "Help text test"
+        },
+        "phoneNumber": {
+          "label": "Phone Number",
+          "placeholder": "Enter your phone number",
+          "helpText": "Provide a reachable phone number"
+        },
+        "address": {
+          "street": {
+            "label": "Street",
+            "placeholder": "Enter your street",
+            "helpText": "Provide the street name and house number"
+          },
+          "zipCode": {
+            "label": "ZIP Code",
+            "placeholder": "Enter your ZIP code",
+            "helpText": "Provide the postal code for your residence"
+          },
+          "city": {
+            "label": "City",
+            "placeholder": "Enter your city",
+            "helpText": "Provide the city you reside in"
+          },
+          "province": {
+            "label": "Province",
+            "placeholder": "Enter your province",
+            "helpText": "Provide your province of residence"
+          },
+          "country": {
+            "label": "Country",
+            "placeholder": "Enter your country",
+            "helpText": "Provide your country of residence"
+          }
+        }
+      }
+    },
+    "userAuthDetails": {
+      "form": {
+        "title": "Account Security",
+        "subtitle": "Protect your profile with a strong password"
+      },
+      "fields": {
+        "username": {
+          "label": "Username",
+          "placeholder": "Enter your username",
+          "helpText": "The username can only contain letters, numbers, dots, hyphens, and underscores."
+        },
+        "password": {
+          "label": "Password",
+          "placeholder": "Enter your password",
+          "helpText": "Password must be at least 8 characters long, including letters and numbers"
+        },
+        "confirmPassword": {
+          "label": "Confirm Password",
+          "placeholder": "Re-enter your password",
+          "helpText": "Ensure the password matches the one entered above"
+        }
+      }
+    }
+  }
+}

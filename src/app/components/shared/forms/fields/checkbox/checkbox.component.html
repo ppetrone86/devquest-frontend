@@ -1,0 +1,17 @@
+<app-field-wrapper [model]="model" [control]="control" [noLabels]="true">
+  <div class="flex items-center gap-3">
+    <p-checkbox
+      [inputId]="model.name"
+      [formControl]="control"
+      [indeterminate]="isIndeterminate()"
+      class="leading-[normal]"
+      binary
+    />
+    <label [for]="model.name">
+      {{ model.label | translate }}
+      @if (required) {
+        <span class="text-primary">*</span>
+      }
+    </label>
+  </div>
+</app-field-wrapper>

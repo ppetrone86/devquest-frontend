@@ -1,0 +1,8 @@
+<app-topbar />
+<app-sidebar />
+<main
+  class="flex min-h-screen flex-col pt-topbar transition-[margin-inline-start]"
+  [class]="{ 'ml-sidebar-out': sidebarVisible() }"
+>
+  <router-outlet />
+</main>

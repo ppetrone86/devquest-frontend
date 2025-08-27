@@ -1,0 +1,36 @@
+<p-confirmDialog>
+  <ng-template #headless let-message let-onAccept="onAccept" let-onReject="onReject">
+    <div class="bg-surface-0 dark:bg-surface-900 flex flex-col items-center rounded-sm p-8">
+      @if (icon) {
+        <div
+          class="bg-primary text-primary-contrast -mt-20 inline-flex h-24 w-24 items-center justify-center rounded-full"
+        >
+          <i class="text-5xl!" [class]="icon"></i>
+        </div>
+      }
+      @if (message.header) {
+        <span class="mt-6 mb-2 block text-2xl font-bold">{{ message.header }}</span>
+      }
+      @if (message.message) {
+        <p class="mb-0">{{ message.message }}</p>
+      }
+      <ng-content />
+      <div class="mt-6 flex items-center gap-2 *:flex-1">
+        <p-button
+          [label]="reject.label"
+          [pTooltip]="reject.tooltip"
+          (onClick)="onReject()"
+          severity="secondary"
+          fluid
+        />
+        <p-button
+          [label]="accept.label"
+          [pTooltip]="accept.tooltip"
+          (onClick)="onAccept()"
+          [severity]="severity ?? 'primary'"
+          fluid
+        />
+      </div>
+    </div>
+  </ng-template>
+</p-confirmDialog>

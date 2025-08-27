@@ -1,0 +1,57 @@
+.dynamic-form {
+  --form-columns: var(--form-columns-xs, 1);
+
+  display: grid;
+  grid-template-columns: repeat(var(--form-columns), 1fr);
+
+  .form-group {
+    --form-column-span: var(--form-column-span-xs, 1);
+
+    grid-column: span var(--form-column-span);
+  }
+}
+
+@media (min-width: 640px) {
+  .dynamic-form {
+    --form-columns: var(--form-columns-sm, 2);
+    .form-group {
+      --form-column-span: var(--form-column-span-sm, 1);
+    }
+  }
+}
+
+@media (min-width: 768px) {
+  .dynamic-form {
+    --form-columns: var(--form-columns-md, 3);
+    .form-group {
+      --form-column-span: var(--form-column-span-md, 1);
+    }
+  }
+}
+
+@media (min-width: 1024px) {
+  .dynamic-form {
+    --form-columns: var(--form-columns-lg, 4);
+    .form-group {
+      --form-column-span: var(--form-column-span-lg, 1);
+    }
+  }
+}
+
+@media (min-width: 1280px) {
+  .dynamic-form {
+    --form-columns: var(--form-columns-xl, 5);
+    .form-group {
+      --form-column-span: var(--form-column-span-xl, 1);
+    }
+  }
+}
+
+@media (min-width: 1536px) {
+  .dynamic-form {
+    --form-columns: var(--form-columns-2xl, 6);
+    .form-group {
+      --form-column-span: var(--form-column-span-2xl, 1);
+    }
+  }
+}

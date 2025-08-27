@@ -1,0 +1,10 @@
+<app-chat-viewport />
+<app-chat-list-wrapper />
+
+@if (chatToDelete$ | async) {
+  <app-chat-delete-dialog />
+}
+
+@if (chatToEvaluate$ | async) {
+  <app-chat-archive-dialog />
+}

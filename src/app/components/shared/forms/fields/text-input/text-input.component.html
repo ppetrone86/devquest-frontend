@@ -1,0 +1,14 @@
+<app-field-wrapper [model]="model" [control]="control">
+  <input
+    pInputText
+    [id]="model.name"
+    [name]="model.name"
+    [placeholder]="model.placeholder || '' | translate"
+    autocomplete="off"
+    [formControl]="control"
+    [type]="model.type || 'text'"
+    [attr.minlength]="getValidatorValue(fieldValidatorType.MIN_LENGTH)"
+    [attr.maxlength]="getValidatorValue(fieldValidatorType.MAX_LENGTH)"
+    fluid
+  />
+</app-field-wrapper>

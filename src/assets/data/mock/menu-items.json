@@ -1,0 +1,103 @@
+[
+  {
+    "id": "home",
+    "label": "Home",
+    "items": [
+      {
+        "label": "Dashboard",
+        "icon": "pi pi-fw pi-home",
+        "permissions": ["home.dashboard"],
+        "routerLink": ["/"]
+      }
+    ]
+  },
+  {
+    "id": "pages",
+    "label": "AI",
+    "items": [
+      {
+        "label": "Chat",
+        "icon": "pi pi-fw pi-comments",
+        "permissions": ["ai.chat.read"],
+        "routerLink": ["/private/chat"]
+      }
+    ]
+  },
+  {
+    "id": "pages",
+    "label": "Entities",
+    "items": [
+      {
+        "label": "Users",
+        "icon": "pi pi-fw pi-users",
+        "permissions": ["entities.users.read"],
+        "routerLink": ["/private/users"]
+      },
+      {
+        "label": "Products",
+        "icon": "pi pi-fw pi-box",
+        "permissions": ["entities.products.read"],
+        "routerLink": ["/private/products"]
+      }
+    ]
+  },
+  {
+    "id": "pages",
+    "label": "Dynamic Form",
+    "items": [
+      {
+        "label": "User Registration",
+        "icon": "pi pi-fw pi-user",
+        "permissions": ["dynamic_form.user_registration.read"],
+        "routerLink": ["/private/form/user-registration"]
+      },
+      {
+        "label": "Event Registration",
+        "icon": "pi pi-fw pi-calendar",
+        "permissions": ["dynamic_form.event_registration.read"],
+        "routerLink": ["/private/form/event-registration"]
+      },
+      {
+        "label": "Job Application",
+        "icon": "pi pi-fw pi-briefcase",
+        "permissions": ["dynamic_form.job_application.read"],
+        "routerLink": ["/private/form/job-application"]
+      },
+      {
+        "label": "Expense Report",
+        "icon": "pi pi-fw pi-dollar",
+        "permissions": ["dynamic_form.expense_report.read"],
+        "routerLink": ["/private/form/expense-report"]
+      },
+      {
+        "label": "Product Feedback",
+        "icon": "pi pi-fw pi-comments",
+        "permissions": ["dynamic_form.product_feedback.read"],
+        "routerLink": ["/private/form/product-feedback"]
+      },
+      {
+        "label": "JET - Where used?",
+        "icon": "pi pi-search",
+        "permissions": ["dynamic_form.jet_search.read"],
+        "routerLink": ["/private/form/jet-search"]
+      },
+      {
+        "label": "Currency Input",
+        "icon": "pi pi-fw pi-dollar",
+        "permissions": ["dynamic_form.currency_input.read"],
+        "routerLink": ["/private/form/currency-input"]
+      }
+    ]
+  },
+  {
+    "id": "pages",
+    "label": "Test",
+    "items": [
+      {
+        "label": "Components",
+        "icon": "pi pi-fw pi-cog",
+        "routerLink": ["/test-components"]
+      }
+    ]
+  }
+]

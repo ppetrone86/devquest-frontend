@@ -1,0 +1,19 @@
+<app-field-wrapper [model]="model" [control]="control">
+  <p-input-number
+    [id]="model.name"
+    [name]="model.name"
+    [mode]="model.mode"
+    [currency]="model.currency"
+    [locale]="model.locale"
+    [useGrouping]="model.useGrouping"
+    [minFractionDigits]="model.minFractionDigits"
+    [maxFractionDigits]="model.maxFractionDigits"
+    [placeholder]="model.placeholder || '' | translate"
+    [formControl]="control"
+    autocomplete="off"
+    [attr.step]="getValidatorValue(fieldValidatorType.STEP) ?? 1"
+    [attr.min]="getValidatorValue(fieldValidatorType.MIN)"
+    [attr.max]="getValidatorValue(fieldValidatorType.MAX)"
+    fluid
+  />
+</app-field-wrapper>

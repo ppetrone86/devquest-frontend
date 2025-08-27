@@ -1,0 +1,90 @@
+{
+  "title": "Test form-currency-input",
+  "subtitle": "Test form-currency-input",
+  "columns": {
+    "md": 2,
+    "xl": 2,
+    "2xl": 2
+  },
+  "fields": [
+    {
+      "type": "number",
+      "name": "noCurrency",
+      "label": "Should be decimal value (currency not set) - Max 2 decimal digits",
+      "mode": "decimal",
+      "useGrouping": true,
+      "minFractionDigits": 1,
+      "maxFractionDigits": 2,
+      "value": "",
+      "validators": [
+        {
+          "type": "REQUIRED",
+          "message": "ErrorConstants.REQUIRED"
+        }
+      ]
+    },
+    {
+      "type": "number",
+      "name": "decimalAmountCurrency",
+      "label": "Should be decimal (currency set on EUR for test purpose) - Max 5 decimal digits ",
+      "placeholder": "${this._fieldPrefix}amount.placeholder",
+      "mode": "decimal",
+      "currency": "EUR",
+      "useGrouping": true,
+      "minFractionDigits": 1,
+      "maxFractionDigits": 5,
+      "validators": [
+        {
+          "type": "REQUIRED",
+          "message": "Amount is required"
+        }
+      ]
+    },
+    {
+      "type": "number",
+      "name": "amountEUR",
+      "label": "Should be EUR symbol",
+      "mode": "currency",
+      "currency": "EUR",
+      "useGrouping": true,
+      "minFractionDigits": 2,
+      "maxFractionDigits": 5,
+      "validators": [
+        {
+          "type": "REQUIRED",
+          "message": "Amount is required"
+        }
+      ]
+    },
+    {
+      "type": "number",
+      "name": "amountUSD",
+      "label": "Should be USD symbol",
+      "mode": "currency",
+      "currency": "USD",
+      "useGrouping": true,
+      "minFractionDigits": 2,
+      "maxFractionDigits": 5,
+      "validators": [
+        {
+          "type": "REQUIRED",
+          "message": "Amount is required"
+        }
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "type": "SUBMIT",
+      "label": "common.actions.submit.title",
+      "actionUrl": "/profile"
+    },
+    {
+      "type": "RESET",
+      "label": "common.actions.reset.title"
+    }
+  ],
+  "layout": {
+    "columns": 2
+  }
+}

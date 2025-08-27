@@ -1,0 +1,5 @@
+@for (button of buttons; track $index) {
+  @if (button.visible$ | async) {
+    <p-button [icon]="button.icon" [text]="true" [plain]="true" (onClick)="button.command()" />
+  }
+}

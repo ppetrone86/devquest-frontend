@@ -1,0 +1,112 @@
+@if (tableConfig()) {
+  <p-table
+    #table
+    [value]="tableData()"
+    [paginator]="paginator()"
+    [rows]="rows()"
+    [globalFilterFields]="globalFilterFields()"
+  >
+    <!-- Table Caption -->
+    <ng-template pTemplate="caption">
+      <ng-container>
+        <app-table-caption
+          [title]="title()"
+          [addActionLabel]="addActionLabel()"
+          [addActionPermissions]="addActionPermissions()"
+          (addAction)="onAction(addAction(), null)"
+          [hasSearchForm]="hasSearchFormEntity()"
+          [searchPlaceholder]="searchPlaceholder()"
+          [searchFormEntity]="searchFormEntity()"
+          (searchAction)="table.filterGlobal($event, 'contains')"
+        ></app-table-caption>
+      </ng-container>
+    </ng-template>
+
+    <!-- Table Header -->
+    <ng-template pTemplate="header">
+      <tr>
+        @for (col of columns(); track col) {
+          <th pSortableColumn="{{ col.field }}">
+            <div class="flex items-center justify-between">
+              {{ col.header | translate }}
+              <ng-container *ngIf="col.sortable">
+                <p-sortIcon [field]="col.field" class="ml-2"></p-sortIcon>
+              </ng-container>
+              <ng-container *ngIf="col.filterConfig?.visible && col.filterConfig?.type === 'advanced'">
+                <app-column-filter [field]="col.field" display="menu" class="ml-auto"></app-column-filter>
+              </ng-container>
+            </div>
+          </th>
+        }
+        <th *ngIf="hasActions()">Actions</th>
+      </tr>
+      <tr *ngIf="hasBasicFilters()">
+        @for (col of columns(); track col) {
+          <th *ngIf="col.filterConfig?.visible && col.filterConfig?.type === 'basic'">
+            <app-column-filter [field]="col.field"></app-column-filter>
+          </th>
+          <th *ngIf="!col.filterConfig?.visible || col.filterConfig?.type !== 'basic'"></th>
+        }
+        <th *ngIf="hasActions()"></th>
+      </tr>
+    </ng-template>
+
+    <!-- Table Body -->
+    <ng-template pTemplate="body" let-row>
+      <tr>
+        <!-- Loop through columns -->
+        @for (col of columns(); track col) {
+          <td>
+            <ng-container *ngIf="col.cellConfig; else defaultCell">
+              <!-- Show skeleton if loading -->
+              <p-skeleton *ngIf="isLoading(); else cellContent" width="100%" height="24px"></p-skeleton>
+
+              <!-- Actual cell content -->
+              <ng-template #cellContent>
+                <div class="flex items-center">
+                  <!-- Render image if `imageField` is defined -->
+                  <p-avatar
+                    *ngIf="col.cellConfig.imageField"
+                    [image]="row[col.cellConfig.imageField]"
+                    shape="circle"
+                    size="large"
+                    styleClass="align-middle"
+                  >
+                  </p-avatar>
+                  <!-- Render text if `labelField` is defined -->
+                  <span *ngIf="col.cellConfig.labelField" class="ml-2">
+                    {{ row[col.cellConfig.labelField] }}
+                  </span>
+                </div>
+              </ng-template>
+            </ng-container>
+
+            <!-- Default cell rendering -->
+            <ng-template #defaultCell>
+              <!-- Show skeleton loader if data is still loading -->
+              <p-skeleton *ngIf="isLoading(); else cellValue" width="100px"></p-skeleton>
+              <ng-template #cellValue>{{ row[col.field] }}</ng-template>
+            </ng-template>
+          </td>
+        }
+
+        <td *ngIf="hasActions()">
+          <app-table-actions
+            [actions]="actions()"
+            [row]="row"
+            (actionClick)="onAction($event.action, $event.row)"
+          ></app-table-actions>
+        </td>
+      </tr>
+    </ng-template>
+
+    <!-- Empty data message -->
+    <ng-template pTemplate="emptymessage">
+      <tr>
+        <td [attr.colspan]="columnCount()" class="py-4 text-center text-gray-500">
+          {{ 'components.table.emptyMessage' | translate }}
+        </td>
+      </tr>
+    </ng-template>
+  </p-table>
+}

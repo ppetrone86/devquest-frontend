@@ -1,0 +1,20 @@
+<ng-template #mobileTemplate>
+  <p-button icon="pi pi-ellipsis-v" [text]="true" [plain]="true" (onClick)="menu.toggle($event)" />
+  <p-menu #menu [model]="model" [popup]="true" class="m-0!" />
+</ng-template>
+
+<ng-template #desktopTemplate>
+  <!-- TODO: Consider replacing multiple <p-button> with a single styled <p-menu> for submenus -->
+  <!-- Example: <p-menu #menu [model]="model" class="custom-menu-style" /> -->
+
+  @for (item of model; track $index) {
+    <p-button
+      [icon]="item.icon"
+      [label]="iconOnly && item.icon ? undefined : item.label"
+      [pTooltip]="item.tooltip"
+      [text]="true"
+      (click)="item.command && item.command({ originalEvent: $event, item: item })"
+      [plain]="true"
+    />
+  }
+</ng-template>

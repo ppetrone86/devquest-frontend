@@ -1,0 +1,63 @@
+<p-panel styleClass="mx-auto w-full max-w-sm border-primary border-2 shadow-lg rounded-xl">
+  <ng-template pTemplate="header">
+    <div class="flex w-full items-center justify-between gap-2">
+      <span class="font-bold">{{ 'components.login.title' | translate }}</span>
+      <app-language-switcher></app-language-switcher>
+    </div>
+  </ng-template>
+
+  <p-button
+    label="{{ 'components.login.button' | translate }} (SSO)"
+    styleClass="w-full mb-2"
+    (click)="onSubmitSSO()"
+  />
+
+  <p-divider align="center"> {{ 'components.login.divider' | translate }} </p-divider>
+
+  <form id="loginForm" [formGroup]="form" (ngSubmit)="onSubmit(form)" class="space-y-4">
+    <div class="flex flex-col gap-2">
+      <label for="email">{{ 'components.login.fields.email.label' | translate }}</label>
+      <input
+        pInputText
+        id="email"
+        aria-errormessage="email-error"
+        formControlName="email"
+        placeholder="{{ 'components.login.fields.email.placeholder' | translate }}"
+      />
+      @if (form.get('email')?.invalid && (form.get('email')?.dirty || !form.get('email')?.untouched)) {
+        <small id="email-error" class="text-error">
+          {{ 'components.login.fields.email.errors.required' | translate }}
+        </small>
+      }
+    </div>
+
+    <div class="flex w-full flex-col gap-2">
+      <label for="password">{{ 'components.login.fields.password.label' | translate }}</label>
+      <p-password
+        id="password"
+        aria-errormessage="password-error"
+        formControlName="password"
+        placeholder="{{ 'components.login.fields.password.placeholder' | translate }}"
+        [feedback]="false"
+        [toggleMask]="true"
+        styleClass="w-full"
+        inputStyleClass="w-full"
+      />
+      @if (form.get('password')?.invalid && (form.get('password')?.dirty || !form.get('password')?.untouched)) {
+        <small id="password-error" class="text-error">
+          {{ 'components.login.fields.password.errors.required' | translate }}
+        </small>
+      }
+    </div>
+  </form>
+
+  <button
+    pButton
+    pRipple
+    type="submit"
+    form="loginForm"
+    label="{{ 'components.login.button' | translate }}"
+    [disabled]="form.invalid"
+    class="mt-5 w-full"
+  ></button>
+</p-panel>

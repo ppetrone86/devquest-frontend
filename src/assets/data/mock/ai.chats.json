@@ -1,0 +1,182 @@
+{
+  "chats": [
+    {
+      "id": "5f4d5c42-3b6a-4a23-bd5e-002b8bfa4c2e",
+      "title": "Project Discussion",
+      "status": "open",
+      "evaluation": 4,
+      "creationTime": "2023-10-30T09:29:00Z",
+      "messages": [
+        {
+          "id": "d8a1c1d9-945d-4a7a-bef6-21f0a8e4a74e",
+          "content": "Hello! I need some **advice** on the _project timeline_.",
+          "role": "user",
+          "creationDate": "2023-10-30T09:30:00Z"
+        },
+        {
+          "id": "ce10e6d7-b918-469d-97a4-6337b7d2e5a9",
+          "content": "Sure, I'd be happy to help! Let's set some **clear milestones** to ensure _steady progress_.",
+          "role": "model",
+          "creationDate": "2023-10-30T09:31:00Z"
+        },
+        {
+          "id": "8f9d1ed3-e9e1-4f69-8a0b-50fb9262efbd",
+          "content": "That sounds great! How can we ensure everyone stays **on track**?",
+          "role": "user",
+          "creationDate": "2023-10-30T09:32:00Z"
+        },
+        {
+          "id": "3ae305d7-1a4e-4e08-8494-e3f5d1c9d6bf",
+          "content": "We can implement a _weekly review_ to address any ~~delays~~ and adapt our strategy.",
+          "role": "model",
+          "creationDate": "2023-10-30T09:33:00Z"
+        },
+        {
+          "id": "f57b4d22-488d-46d4-8b90-f3a6468e7b5a",
+          "content": "Perfect! I think the team will appreciate the **structure**.",
+          "role": "user",
+          "creationDate": "2023-10-30T09:34:00Z"
+        },
+        {
+          "id": "8f9d1ed3-e9e1-4f69-8a0b-50fb9262efbd",
+          "content": "That sounds great! How can we ensure everyone stays **on track**?",
+          "role": "user",
+          "creationDate": "2023-10-30T09:35:00Z"
+        },
+        {
+          "id": "3ae305d7-1a4e-4e08-8494-e3f5d1c9d6bf",
+          "content": "We can implement a _weekly review_ to address any ~~delays~~ and adapt our strategy.",
+          "role": "model",
+          "creationDate": "2023-10-30T09:36:00Z"
+        },
+        {
+          "id": "f57b4d22-488d-46d4-8b90-f3a6468e7b5a",
+          "content": "Perfect! I think the team will appreciate the **structure**.",
+          "role": "user",
+          "creationDate": "2023-10-30T09:37:00Z"
+        }
+      ],
+      "typingMessage": {
+        "id": "f57b4d22-488d-46d4-8b90-f3a6468e7b5b",
+        "role": "model",
+        "content": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus quos voluptate fuga hic vel eum quasi impedit reprehenderit odio quia labore modi beatae excepturi sequi earum fugit laborum, obcaecati natus quam quae deleniti deserunt facilis iste.",
+        "creationDate": "2023-10-30T09:38:00Z"
+      }
+    },
+    {
+      "id": "c85b4a5e-5174-46f7-a7ab-792089c6a29f",
+      "title": "Health and Wellness Tips",
+      "status": "new",
+      "evaluation": 5,
+      "creationTime": "2023-10-30T15:00:00Z",
+      "messages": [
+        {
+          "id": "72b1a9b2-f302-4f8f-8d68-5a178e3a2724",
+          "content": "Hey AI, do you have any tips for staying **healthy** during a busy schedule?",
+          "role": "user",
+          "creationDate": "2023-10-31T15:00:00Z"
+        },
+        {
+          "id": "f8a053c9-9cfb-4a6f-abe6-153fb0b6d467",
+          "content": "Absolutely! Staying _hydrated_ and getting enough **sleep** are key components.",
+          "role": "model",
+          "creationDate": "2023-10-31T15:01:00Z"
+        },
+        {
+          "id": "d33e47f6-0a91-4b57-89db-0e799e8af1f2",
+          "content": "Sleep is definitely my weakness. Any advice for getting better **quality sleep**?",
+          "role": "user",
+          "creationDate": "2023-10-31T15:02:00Z"
+        },
+        {
+          "id": "3c632a42-89cf-45b2-b841-90bcfe5d85b1",
+          "content": "Try to avoid screens at least **one hour** before bed. The _blue light_ can interfere with your __melatonin__ levels.",
+          "role": "model",
+          "creationDate": "2023-10-31T15:03:00Z"
+        },
+        {
+          "id": "10bd98e1-3e90-4bf9-9c5b-643b2185c22a",
+          "content": "I’ll try that! Thank you for the __valuable__ advice.",
+          "role": "user",
+          "creationDate": "2023-10-31T15:04:00Z"
+        }
+      ]
+    },
+    {
+      "id": "c85b4a5e-5174-46f7-a7ab-792089c6a29e",
+      "title": "Health and Wellness Tips 2",
+      "status": "new",
+      "creationTime": "2023-10-30T15:00:00Z",
+      "messages": [
+        {
+          "id": "72b1a9b2-f302-4f8f-8d68-5a178e3a2724",
+          "content": "Hey AI, do you have any tips for staying **healthy** during a busy schedule?",
+          "role": "user",
+          "creationDate": "2023-10-31T15:00:00Z"
+        },
+        {
+          "id": "f8a053c9-9cfb-4a6f-abe6-153fb0b6d467",
+          "content": "Absolutely! Staying _hydrated_ and getting enough **sleep** are key components.",
+          "role": "model",
+          "creationDate": "2023-10-31T15:01:00Z"
+        },
+        {
+          "id": "d33e47f6-0a91-4b57-89db-0e799e8af1f2",
+          "content": "Sleep is definitely my weakness. Any advice for getting better **quality sleep**?",
+          "role": "user",
+          "creationDate": "2023-10-31T15:02:00Z"
+        },
+        {
+          "id": "3c632a42-89cf-45b2-b841-90bcfe5d85b1",
+          "content": "Try to avoid screens at least **one hour** before bed. The _blue light_ can interfere with your __melatonin__ levels.",
+          "role": "model",
+          "creationDate": "2023-10-31T15:03:00Z"
+        },
+        {
+          "id": "10bd98e1-3e90-4bf9-9c5b-643b2185c22a",
+          "content": "I’ll try that! Thank you for the __valuable__ advice.",
+          "role": "user",
+          "creationDate": "2023-10-31T15:04:00Z"
+        }
+      ]
+    },
+    {
+      "id": "c85b4a5e-5174-46f7-a7ab-792089c6a29d",
+      "title": "Archived chat with a very long title to test the layout",
+      "status": "closed",
+      "creationTime": "2023-10-30T15:00:00Z",
+      "messages": [
+        {
+          "id": "72b1a9b2-f302-4f8f-8d68-5a178e3a2724",
+          "content": "Hey AI, do you have any tips for staying **healthy** during a busy schedule?",
+          "role": "user",
+          "creationDate": "2023-10-31T15:00:00Z"
+        },
+        {
+          "id": "f8a053c9-9cfb-4a6f-abe6-153fb0b6d467",
+          "content": "Absolutely! Staying _hydrated_ and getting enough **sleep** are key components.",
+          "role": "model",
+          "creationDate": "2023-10-31T15:01:00Z"
+        },
+        {
+          "id": "d33e47f6-0a91-4b57-89db-0e799e8af1f2",
+          "content": "Sleep is definitely my weakness. Any advice for getting better **quality sleep**?",
+          "role": "user",
+          "creationDate": "2023-10-31T15:02:00Z"
+        },
+        {
+          "id": "3c632a42-89cf-45b2-b841-90bcfe5d85b1",
+          "content": "Try to avoid screens at least **one hour** before bed. The _blue light_ can interfere with your __melatonin__ levels.",
+          "role": "model",
+          "creationDate": "2023-10-31T15:03:00Z"
+        },
+        {
+          "id": "10bd98e1-3e90-4bf9-9c5b-643b2185c22a",
+          "content": "I’ll try that! Thank you for the __valuable__ advice.",
+          "role": "user",
+          "creationDate": "2023-10-31T15:04:00Z"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,22 @@
+<app-confirm-dialog
+  [visible]="visible"
+  [icon]="'pi pi-question'"
+  [header]="'components.chatArchiveDialog.header' | translate"
+  [message]="'components.chatArchiveDialog.message' | translate"
+  [accept]="{
+    label: 'components.chatArchiveDialog.buttons.accept.title' | translate,
+    tooltip: 'components.chatArchiveDialog.buttons.accept.tooltip' | translate,
+  }"
+  [reject]="{
+    label: 'components.chatArchiveDialog.buttons.reject.title' | translate,
+    tooltip: 'components.chatArchiveDialog.buttons.reject.tooltip' | translate,
+  }"
+  (acceptCallback)="onAccept()"
+  (rejectCallback)="onReject()"
+  severity="primary"
+>
+  <div class="mt-4 flex flex-col items-center gap-2">
+    <p>{{ 'components.chatActions.evaluate.title' | translate }}</p>
+    <p-rating [(ngModel)]="rate" [dt]="ratingTokens" />
+  </div>
+</app-confirm-dialog>

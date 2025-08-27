@@ -1,0 +1,23 @@
+<app-field-wrapper [model]="model" [control]="control">
+  <p-datepicker
+    [id]="model.name"
+    [name]="model.name"
+    [placeholder]="model.placeholder || '' | translate"
+    [formControl]="control"
+    autocomplete="off"
+    inputId="icondisplay"
+    [iconDisplay]="'input'"
+    [showIcon]="true"
+    [showTime]="!hideTime"
+    [timeOnly]="hideDate"
+    [dateFormat]="dateFormat()"
+    [hourFormat]="timeFormat()"
+    fluid
+  >
+    @if (hideDate) {
+      <ng-template #inputicon let-clickCallBack="clickCallBack">
+        <i class="pi pi-clock" (click)="clickCallBack($event)" (keyup)="clickCallBack($event)" tabindex="0"></i>
+      </ng-template>
+    }
+  </p-datepicker>
+</app-field-wrapper>

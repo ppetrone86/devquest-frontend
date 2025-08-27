@@ -1,0 +1,13 @@
+[
+  {
+    "id": "pages",
+    "label": "AI",
+    "items": [
+      {
+        "label": "Chat",
+        "icon": "pi pi-fw pi-comments",
+        "routerLink": ["/private/chat"]
+      }
+    ]
+  }
+]

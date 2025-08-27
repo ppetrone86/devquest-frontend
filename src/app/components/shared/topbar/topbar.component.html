@@ -1,0 +1,21 @@
+<div
+  class="z-topbar bg-overlay-modal-background fixed top-0 right-0 left-0 flex h-16 items-center justify-between gap-2 px-4 shadow-lg"
+>
+  <div class="flex items-center gap-4">
+    <p-button icon="pi pi-bars" [text]="true" [plain]="true" (click)="toggleSidebar()" />
+    <a routerLink="" class="text-color font-semibold">
+      {{ appTitle | uppercase }}
+    </a>
+  </div>
+
+  <div class="flex items-center justify-end gap-2">
+    <div class="flex flex-col items-end">
+      @if (userEmail) {
+        <span class="truncate text-xs">{{ userEmail }}</span>
+      }
+    </div>
+    <app-language-switcher />
+    <app-theme-selector />
+    <app-menubar [model]="menuItems" [iconOnly]="true" class="hidden" />
+  </div>
+</div>

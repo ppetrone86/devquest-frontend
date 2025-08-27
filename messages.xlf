@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file source-language="en-US" datatype="plaintext" original="ng2.template">
+    <body>
+      <trans-unit id="981344291816583402" datatype="html">
+        <source>Public Layout</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/layouts/public-layout/public-layout-component.html</context>
+          <context context-type="linenumber">1,2</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="187187500641108332" datatype="html">
+        <source><x id="INTERPOLATION" equiv-text="{{ appTitle | uppercase }}"/></source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/layouts/topbar/topbar.component.html</context>
+          <context context-type="linenumber">8,11</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="3825802286872185103" datatype="html">
+        <source>Calendar</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/layouts/topbar/topbar.component.html</context>
+          <context context-type="linenumber">21,22</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="4915431133669985304" datatype="html">
+        <source>Profile</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/layouts/topbar/topbar.component.html</context>
+          <context context-type="linenumber">25,26</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="4930506384627295710" datatype="html">
+        <source>Settings</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/layouts/topbar/topbar.component.html</context>
+          <context context-type="linenumber">29,30</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="764317357050559468" datatype="html">
+        <source>login works!</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/pages/login-page/login-page.component.html</context>
+          <context context-type="linenumber">1,2</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="8340885494087382633" datatype="html">
+        <source>my-dashboard works!</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/pages/my-dashboard-page/my-dashboard-page.component.html</context>
+          <context context-type="linenumber">1,2</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="5701142477033270035" datatype="html">
+        <source>not-found works!</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/pages/not-found-page/not-found-page.component.html</context>
+          <context context-type="linenumber">1,2</context>
+        </context-group>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

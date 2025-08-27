@@ -1,0 +1,484 @@
+{
+  "errors": {
+    "400_badRequest": "La richiesta non è valida.",
+    "401_unauthorized": "Autenticazione richiesta o non valida.",
+    "403_forbidden": "Accesso negato.",
+    "404_notFound": "Risorsa non trovata.",
+    "408_requestTimeout": "Timeout della richiesta.",
+    "429_tooManyRequests": "Troppe richieste in un periodo breve.",
+    "500_internalServerError": "Errore generico del server.",
+    "502_badGateway": "Gateway errato, problema nella comunicazione tra server.",
+    "503_serviceUnavailable": "Servizio non disponibile (tipicamente per manutenzione o sovraccarico).",
+    "504_gatewayTimeout": "Timeout nel comunicare con un altro server.",
+    "serverNotResponding": "💀 Il server non sta rispondendo!",
+    "unknownError": "Si è verificato un errore sconosciuto",
+    "applicationError": "Errore applicativo: {{errorMessage}}",
+    "noRefreshToken": "Refresh Token non disponibile. Effettua di nuovo l'accesso.",
+    "failedToRefreshToken": "Errore durante il rinnovo del token. Effettua di nuovo l'accesso",
+    "pkceGenerationFailed": "Errore nella generazione dello stato PKCE: Mancano codeVerifier, codeChallenge, state o nonce.",
+    "codeOrVerifierMissing": "Codice o Code Verifier mancante.",
+    "authProviderConnectionFailed": "Errore di connessione con il provider di autenticazione.",
+    "authNoPermissionsAssigned": "Non hai permessi associati al tuo account. Contatta un amministratore."
+  },
+  "entities": {
+    "chats": {
+      "errors": {
+        "chatNotSelected": "Devi selezionare una chat per inviare messaggi.",
+        "chatClosed": "La chat è chiusa: non è possibile inviare messaggi.",
+        "chatAlreadyEvaluated": "La chat è già stata valutata: non è possibile cambiare la valutazione.",
+        "chatNewEvaluationNotAllowed": "Non è possibile valutare una chat appena creata."
+      }
+    }
+  },
+  "common": {
+    "uiLabels": {
+      "startsWith": "Inizia con",
+      "contains": "Contiene",
+      "notContains": "Non contiene",
+      "endsWith": "Finisce con",
+      "equals": "Uguale a",
+      "notEquals": "Diverso da",
+      "noFilter": "Nessun filtro",
+      "lt": "Minore di",
+      "lte": "Minore o uguale a",
+      "gt": "Maggiore di",
+      "gte": "Maggiore o uguale a",
+      "dateIs": "La data è",
+      "dateIsNot": "La data non è",
+      "dateBefore": "Data precedente",
+      "dateAfter": "Data successiva",
+      "custom": "Personalizzato",
+      "clear": "Pulisci",
+      "apply": "Applica",
+      "matchAll": "Corrisponde a tutti",
+      "matchAny": "Corrisponde a uno",
+      "addRule": "Aggiungi regola",
+      "removeRule": "Rimuovi regola",
+      "accept": "Accetta",
+      "reject": "Rifiuta",
+      "choose": "Scegli",
+      "upload": "Carica",
+      "cancel": "Annulla",
+      "dayNames": ["Domenica", "Lunedì", "Martedì", "Mercoledì", "Giovedì", "Venerdì", "Sabato"],
+      "dayNamesShort": ["Dom", "Lun", "Mar", "Mer", "Gio", "Ven", "Sab"],
+      "dayNamesMin": ["Do", "Lu", "Ma", "Me", "Gi", "Ve", "Sa"],
+      "monthNames": [
+        "Gennaio",
+        "Febbraio",
+        "Marzo",
+        "Aprile",
+        "Maggio",
+        "Giugno",
+        "Luglio",
+        "Agosto",
+        "Settembre",
+        "Ottobre",
+        "Novembre",
+        "Dicembre"
+      ],
+      "monthNamesShort": ["Gen", "Feb", "Mar", "Apr", "Mag", "Giu", "Lug", "Ago", "Set", "Ott", "Nov", "Dic"],
+      "today": "Oggi",
+      "weekHeader": "Sett."
+    },
+    "phrases": {
+      "selectAnOption": "Seleziona un'opzione"
+    },
+    "fieldValidators": {
+      "required": "Questo campo è obbligatorio.",
+      "minLength": "Il campo deve contenere almeno {{value}} caratteri.",
+      "maxLength": "Il campo non può superare i {{value}} caratteri.",
+      "min": "Il valore deve essere maggiore o uguale a {{value}}.",
+      "max": "Il valore deve essere minore o uguale a {{value}}.",
+      "pattern": "Il formato del campo non è valido.",
+      "email": "Inserisci un indirizzo email valido.",
+      "url": "Inserisci un URL valido.",
+      "date": "Inserisci una data valida.",
+      "file": "Carica un file valido.",
+      "custom": "Errore di validazione personalizzato.",
+      "async": {
+        "emailMissMatch": "Le email non coincidono",
+        "passwordMissMatch": "Le password non coincidono",
+        "regexValidation": "Il formato del valore inserito non è valido."
+      }
+    },
+    "actions": {
+      "submit": {
+        "title": "Salva",
+        "tooltip": "Salva le informazioni indicate nel modulo"
+      },
+      "applyFilters": {
+        "title": "Applica filtri",
+        "tooltip": "Applica i filtri indicati nel modulo"
+      },
+      "reset": {
+        "title": "Pulisci",
+        "tooltip": "Pulisci il form"
+      }
+    },
+    "order": {
+      "day": "Ordini al giorno",
+      "month": "Ordini al mese",
+      "total": "Totale ordini",
+      "earning": "Guadagno totale",
+      "product": "Prodotti in totale",
+      "pricesAndProducts": "Prodotti e guadagni"
+    },
+    "user": {},
+    "post": {
+      "tag": "Post per genere"
+    },
+    "product": {
+      "category": "Prodotti per categoria"
+    }
+  },
+  "menu": {
+    "section": {
+      "home": "Home",
+      "ai": "AI",
+      "entities": "Entità",
+      "dynamic_form": "Moduli dinamici",
+      "test": "Test"
+    },
+    "dashboard": "Dashboard",
+    "chat": "Chat",
+    "users": "Utenti",
+    "products": "Prodotti",
+    "user_registration": "Registrazione utente",
+    "event_registration": "Registrazione evento",
+    "job_application": "Candidatura",
+    "expense_report": "Nota spese",
+    "product_feedback": "Feedback prodotto",
+    "jet_search": "JET - Where used?",
+    "currency_input": "Input valuta",
+    "components": "Componenti"
+  },
+  "messages": {
+    "summary": {
+      "success": "Eseguito con successo",
+      "error": "Errore",
+      "warning": "Attenzione",
+      "info": "Informazione"
+    },
+    "detail": {
+      "success": "Operazione eseguita con successo",
+      "error": "Operazione fallita",
+      "warning": "Attenzione, operazione eseguita ma con alcuni warning",
+      "info": "Testo informativo"
+    }
+  },
+  "components": {
+    "table": {
+      "columns": {
+        "actions": "Azioni"
+      },
+      "emptyMessage": "Non sono presenti elementi da visualizzare."
+    },
+    "customColumnFilter": {
+      "filter": {
+        "apply": "Applica",
+        "clear": "Cancella"
+      }
+    },
+    "languageSwitcher": {
+      "it_IT": "Italiano",
+      "en_UK": "Inglese (UK)",
+      "en_US": "Inglese (US)"
+    },
+    "login": {
+      "title": "Bentornato!",
+      "button": "Accedi",
+      "divider": "Oppure",
+      "fields": {
+        "email": {
+          "label": "Email",
+          "placeholder": "Inserisci la tua email",
+          "errors": {
+            "required": "Inserire un valore per il campo email",
+            "invalid": "Inserire un indirizzo email valido (es: mario.rosssi@mail.com)"
+          }
+        },
+        "password": {
+          "label": "Password",
+          "placeholder": "Inserisci la tua password",
+          "errors": {
+            "required": "Inserire un valore per il campo password"
+          }
+        }
+      }
+    },
+    "notFoundPage": {
+      "title": "Pagina non trovata",
+      "message": "Non abbiamo trovato la pagina che cercavi.",
+      "buttons": {
+        "home": {
+          "label": "Pagina iniziale",
+          "title": "Clicca qui per tornare alla pagina iniziale"
+        }
+      }
+    },
+    "notAuthorizedPage": {
+      "title": "Non autorizzato",
+      "message": "Non hai i permessi necessari per accedere a questa pagina.",
+      "buttons": {
+        "home": {
+          "label": "Pagina iniziale",
+          "title": "Clicca qui per tornare alla pagina iniziale"
+        }
+      }
+    },
+    "topbar": {
+      "buttons": {
+        "buttonProfile": {
+          "label": "Profilo"
+        },
+        "buttonLogout": {
+          "label": "Logout"
+        },
+        "buttonLogin": {
+          "label": "Accedi"
+        }
+      }
+    },
+    "authProcessing": {
+      "loading": "Attendi...",
+      "redirect": "Reindirizzamento in corso"
+    },
+    "productCard": {
+      "title": "Prodotti"
+    },
+    "userCard": {
+      "title": "Utenti"
+    },
+    "orderCard": {
+      "title": "Ordini"
+    },
+    "postCard": {
+      "title": "Post"
+    },
+    "productTable": {
+      "title": "Elenco prodotti",
+      "fields": {
+        "search": {
+          "placeholder": "Cerca prodotto..."
+        }
+      },
+      "columns": {
+        "code": "Codice",
+        "name": "Nome",
+        "price": "Prezzo",
+        "category": "Categoria",
+        "reviews": "Voto",
+        "status": "Stato"
+      }
+    },
+    "userTable": {
+      "title": "Elenco utenti",
+      "fields": {
+        "search": {
+          "placeholder": "Cerca utente..."
+        }
+      },
+      "columns": {
+        "fullName": "Nome",
+        "email": "Email",
+        "gender": "Genere",
+        "phone": "Telefono",
+        "birthDate": "Data di nascita"
+      },
+      "actions": {
+        "newUser": "Nuovo utente",
+        "editUser": "Modifica utente",
+        "deleteUser": "Cencella utente"
+      }
+    },
+    "usersSearchForm": {
+      "fields": {
+        "fullName": {
+          "label": "Nome completo",
+          "placeholder": "Filtra per nome completo"
+        },
+        "email": {
+          "label": "Email",
+          "placeholder": "Filtra per email"
+        },
+        "gender": {
+          "label": "Genere",
+          "placeholder": "Filtra per genere",
+          "options": {
+            "male": "Maschio",
+            "female": "Femmina",
+            "other": "Altro"
+          }
+        },
+        "phone": {
+          "label": "Telefono",
+          "placeholder": "Filtra per telefono"
+        }
+      }
+    },
+    "chatListWrapper": {
+      "chatTitles": {
+        "today": "Oggi",
+        "yesterday": "Ieri",
+        "otherDays": "Chat precedenti",
+        "archived": "Archiviate"
+      },
+      "buttons": {
+        "new": {
+          "title": "Nuova chat",
+          "name": "Nuova chat"
+        }
+      },
+      "messages": {
+        "emptyList": "Nessuna chat disponibile"
+      }
+    },
+    "chatMessage": {
+      "welcomeMessage": "Benvenuto! Cosa posso fare per te?",
+      "archivedMessage": "Questa chat è stata archiviata e non è più possibile inviare messaggi."
+    },
+    "chatInput": {
+      "fields": {
+        "message": "Scrivi un messaggio..."
+      },
+      "buttons": {
+        "sendMessage": {
+          "title": "Invia messaggio",
+          "name": "Invia"
+        }
+      }
+    },
+    "chatActions": {
+      "archive": {
+        "label": "Archivia",
+        "title": "Archivia questa chat"
+      },
+      "delete": {
+        "label": "Elimina",
+        "title": "Elimina questa chat"
+      },
+      "evaluate": {
+        "title": "Come valuteresti questa chat?"
+      }
+    },
+    "chatArchiveDialog": {
+      "header": "Sei sicuro?",
+      "message": "Si prega di confermare per procedere.",
+      "buttons": {
+        "accept": {
+          "title": "Si, continua.",
+          "tooltip": "Si, procedi con l'archiviazione di questa chat"
+        },
+        "reject": {
+          "title": "No, ci ho ripensato.",
+          "tooltip": "No, non sono sicuro."
+        }
+      }
+    },
+    "chatDeleteDialog": {
+      "header": "Sei sicuro?",
+      "message": "Si prega di confermare per procedere.",
+      "buttons": {
+        "accept": {
+          "title": "Si, continua.",
+          "tooltip": "Si, procedi con la cancellazione di questa chat"
+        },
+        "reject": {
+          "title": "No, ci ho ripensato.",
+          "tooltip": "No, non sono sicuro."
+        }
+      }
+    },
+    "profilePage": {
+      "title": "Il tuo Profilo"
+    },
+    "userDetails": {
+      "form": {
+        "title": "I tuoi dati personali",
+        "subtitle": "Tieni aggiornate le tue informazioni per un'esperienza migliore"
+      },
+      "fields": {
+        "firstname": {
+          "label": "Nome",
+          "placeholder": "Inserisci il tuo nome",
+          "helpText": "Fornisci il tuo nome di battesimo"
+        },
+        "lastname": {
+          "label": "Cognome",
+          "placeholder": "Inserisci il tuo cognome",
+          "helpText": "Fornisci il tuo cognome di battesimo"
+        },
+        "email": {
+          "label": "Email",
+          "placeholder": "Inserisci la tua email",
+          "helpText": "Fornisci un indirizzo email valido"
+        },
+        "confirmEmail": {
+          "label": "Conferma Email",
+          "placeholder": "Reinserisci la tua email",
+          "helpText": "Assicurati che l'indirizzo email corrisponda a quello inserito sopra"
+        },
+        "age": {
+          "label": "Età",
+          "placeholder": "Inserisci la tua età",
+          "helpText": "L'età minima consentita è 18 anni"
+        },
+        "phoneNumber": {
+          "label": "Numero di Telefono",
+          "placeholder": "Inserisci il tuo numero di telefono",
+          "helpText": "Fornisci un numero di telefono raggiungibile"
+        },
+        "address": {
+          "street": {
+            "label": "Via",
+            "placeholder": "Inserisci la tua via",
+            "helpText": "Indica il nome della via e il numero civico"
+          },
+          "zipCode": {
+            "label": "CAP",
+            "placeholder": "Inserisci il tuo CAP",
+            "helpText": "Fornisci il codice di avviamento postale della tua residenza"
+          },
+          "city": {
+            "label": "Città",
+            "placeholder": "Inserisci la tua città",
+            "helpText": "Indica la città in cui risiedi"
+          },
+          "province": {
+            "label": "Provincia",
+            "placeholder": "Inserisci la tua provincia",
+            "helpText": "Indica la provincia di residenza"
+          },
+          "country": {
+            "label": "Paese",
+            "placeholder": "Inserisci il tuo paese",
+            "helpText": "Indica il paese di residenza"
+          }
+        }
+      }
+    },
+    "userAuthDetails": {
+      "form": {
+        "title": "Sicurezza del tuo account",
+        "subtitle": "Proteggi il tuo profilo con una password forte"
+      },
+      "fields": {
+        "username": {
+          "label": "Username",
+          "placeholder": "Inserisci la tua username",
+          "helpText": "La username può contenere solo lettere, numeri, punti, trattini e underscore."
+        },
+        "password": {
+          "label": "Password",
+          "placeholder": "Inserisci la tua password",
+          "helpText": "La password deve contenere almeno 8 caratteri, includendo lettere e numeri"
+        },
+        "confirmPassword": {
+          "label": "Conferma Password",
+          "placeholder": "Reinserisci la tua password",
+          "helpText": "Assicurati che la password corrisponda a quella inserita sopra"
+        }
+      }
+    }
+  }
+}

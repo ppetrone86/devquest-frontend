@@ -1,0 +1,30 @@
+<p-select
+  [(ngModel)]="selectedLanguage"
+  [options]="languages"
+  (onChange)="switchLanguage()"
+  optionValue="value"
+  optionLabel="label"
+  placeholder="Select a language"
+  styleClass="p-dropdown-right align-middle"
+  panelStyleClass="w-max"
+>
+  <ng-template let-item pTemplate="selectedItem">
+    <img
+      [src]="'assets/images/flags/' + item.value + '.svg'"
+      [alt]="item.value"
+      [class]="'flag flag-' + item.value"
+      class="w-5"
+    />
+  </ng-template>
+  <ng-template let-item pTemplate="item">
+    <div class="align-items-center flex gap-4">
+      <img
+        [src]="'assets/images/flags/' + item.value + '.svg'"
+        [alt]="item.value"
+        [class]="'flag flag-' + item.value"
+        class="w-5"
+      />
+      <span>{{ 'components.languageSwitcher.' + item.value | translate }}</span>
+    </div>
+  </ng-template>
+</p-select>

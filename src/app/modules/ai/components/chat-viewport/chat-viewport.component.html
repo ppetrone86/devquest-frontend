@@ -1,0 +1,101 @@
+<!-- Controls for the chat list in the sidebar -->
+<ng-template #chatControls>
+  <div
+    class="flex items-center justify-end gap-2 transition-opacity delay-75"
+    [class]="{
+      'pointer-events-none': chatListVisible(),
+      'opacity-0': chatListVisible(),
+      'delay-0!': chatListVisible(),
+    }"
+  >
+    >
+    <p-button *appPermissioned="['ai.chat.create']" icon="pi pi-pen-to-square" size="large" (onClick)="onNewChat()" />
+    <p-button icon="pi pi-list" size="large" severity="secondary" (onClick)="openChatList()" outlined />
+  </div>
+</ng-template>
+
+<!-- Main content of the chat viewport -->
+<div class="transition-[margin-inline-end]" [class.mr-sidebar-out]="chatListVisible()">
+  <div
+    class="page-content relative mx-auto flex w-full max-w-4xl flex-col items-stretch justify-center"
+    [style]="{
+      height: 'calc(100vh - var(--wlb-topbar-height))',
+    }"
+  >
+    @if (chat || loading) {
+      <!-- Case in which we opened an existing chat -->
+
+      <!-- Chat header -->
+      <div class="flex items-center justify-between border-b pb-3">
+        @if (chat) {
+          <!-- Chat title and (possible) evaluation -->
+          <div class="flex items-center gap-6">
+            <h1 class="text-2xl font-semibold">{{ chat.title }}</h1>
+            @if (chat.evaluation) {
+              <p-rating [ngModel]="chat!.evaluation" readonly class="pointer-events-none" />
+            }
+          </div>
+          <!-- Chat controls and actions -->
+          <div class="flex items-center gap-2">
+            <ng-container *ngTemplateOutlet="chatControls" />
+            <app-chat-actions type="menu" [chat]="chat" />
+          </div>
+        } @else {
+          <!-- Chat topbar skeleton -->
+          <p-skeleton width="24rem" height="2rem" borderRadius="1rem" />
+        }
+      </div>
+
+      <!-- Chat messages -->
+      <div #scrollContainer class="flex flex-1 flex-col gap-2 overflow-y-auto px-0 py-4 sm:px-12">
+        @if (loading) {
+          <!-- Chat skeleton -->
+          <app-chat-skeleton [itemCount]="4" />
+        } @else {
+          <!-- Old messages -->
+          @for (message of messages$ | async; track $index) {
+            <app-chat-message [message]="message" />
+          }
+
+          <!-- Latest message with typing effect -->
+          @if (typingMessage && typingMessage.content) {
+            <app-chat-message [message]="typingMessage" [typing]="typingMessage.typing" />
+          }
+        }
+      </div>
+    } @else {
+      <!-- Case in which we are waiting for a chat to be opened -->
+
+      <!-- Call to action title with typing effect -->
+      <h1 class="mb-8 text-center text-3xl font-semibold">
+        {{ typingTitle?.content }}
+        <app-cursor [visible]="typingTitle?.typing" />
+      </h1>
+
+      <!-- Chat controls -->
+      <div class="absolute top-4 right-4">
+        <ng-container *ngTemplateOutlet="chatControls" />
+      </div>
+    }
+    @if (!chat || chat.status !== 'closed') {
+      <!-- Chat input - visible only if the chat is not closed and if the user has the correct permission -->
+      <app-chat-input
+        *appPermissioned="['ai.chat.create']"
+        (messageSent)="sendMessage($event)"
+        [scrollable]="showScrollToBottom"
+        (scrollToBottom)="scrollToBottom()"
+        [canFastForward]="!!typingMessage?.typing"
+        (fastForward)="onFastForwardTyping()"
+      />
+    } @else {
+      <!-- Warning message if the chat is closed -->
+      <p-message
+        severity="info"
+        size="large"
+        icon="pi pi-lock"
+        [text]="(getTranslation('components.chatMessage.archivedMessage') | async) || undefined"
+        styleClass="max-w-4xl w-full mx-auto my-8"
+      />
+    }
+  </div>
+</div>

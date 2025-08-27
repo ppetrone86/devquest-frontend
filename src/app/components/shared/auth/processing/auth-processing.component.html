@@ -1,0 +1,17 @@
+<div
+  class="bg-opacity-50 fixed inset-0 z-50 flex items-center justify-center bg-gray-900 backdrop-blur-xs transition-opacity duration-300"
+  [class]="{ 'pointer-events-none opacity-0': !loading(), 'opacity-100': loading() }"
+>
+  @if (loading()) {
+    <div class="bg-opacity-90 scale-100 transform rounded-xl p-6 text-center transition-all duration-300">
+      <p-progress-spinner
+        strokeWidth="5"
+        fill="var(--surface-ground)"
+        animationDuration="1s"
+        class="mx-auto mb-4 block"
+      />
+      <p class="text-primary animate-pulse font-medium">{{ 'components.authProcessing.loading' | translate }}</p>
+      <p class="mt-1 text-xs text-white">{{ 'components.authProcessing.redirect' | translate }}</p>
+    </div>
+  }
+</div>

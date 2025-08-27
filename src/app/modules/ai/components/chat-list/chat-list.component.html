@@ -1,0 +1,11 @@
+<p-menu [model]="model" [dt]="menuTokens">
+  <ng-template #item let-item>
+    <app-chat-actions
+      type="button"
+      [chat]="item.state"
+      [label]="item.label"
+      [selected]="item.id === currentChatId"
+      (callback)="onChatSelect(item.state)"
+    />
+  </ng-template>
+</p-menu>

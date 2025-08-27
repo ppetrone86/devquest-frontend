@@ -1,0 +1,26 @@
+<div class="page-content grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-4">
+  <!-- Card Counters -->
+  <app-card-counter title="components.productCard.title" icon="pi-shopping-bag" type="product" />
+  <app-card-counter title="components.userCard.title" icon="pi-users" type="user" />
+  <app-card-counter title="components.orderCard.title" icon="pi-shopping-cart" type="order" />
+  <app-card-counter title="components.postCard.title" icon="pi-file" type="post" />
+
+  <!-- Charts Section -->
+  <div class="col-span-full grid grid-cols-1 gap-4 md:grid-cols-2">
+    <app-product-category-chart type="doughnut" />
+    <app-order-prices-and-products-chart />
+  </div>
+
+  <!-- Orders Charts -->
+  <div class="col-span-full grid grid-cols-1 gap-4 md:grid-cols-2">
+    <app-order-month-chart />
+    <app-order-date-chart />
+    <app-order-price-chart />
+    <app-order-products-chart />
+  </div>
+
+  <!-- Table Section -->
+  <div class="col-span-full">
+    <app-tag-table />
+  </div>
+</div>

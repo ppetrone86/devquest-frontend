@@ -1,0 +1,17 @@
+<p-floatlabel variant="on">
+  <input
+    pInputText
+    id="{{ model.name }}"
+    name="{{ model.name }}"
+    placeholder="{{ model.placeholder }}"
+    autocomplete="off"
+    [formControl]="control"
+    [type]="model.type || 'number'"
+    [attr.step]="getValidatorValue(fieldValidatorType.STEP) ?? 1"
+    [attr.min]="getValidatorValue(fieldValidatorType.MIN)"
+    [attr.max]="getValidatorValue(fieldValidatorType.MAX)"
+    [ngClass]="{ 'ng-dirty': control.invalid }"
+  />
+  <label for="{{ model.name }}">{{ model.label }}</label>
+  <app-field-errors [control]="control" />
+</p-floatlabel>

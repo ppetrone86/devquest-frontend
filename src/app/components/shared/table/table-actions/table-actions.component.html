@@ -1,0 +1,11 @@
+<div class="flex gap-1">
+  @for (action of actions; track action) {
+    <p-button
+      [icon]="action.icon"
+      (click)="onActionClick(action)"
+      [rounded]="true"
+      [text]="true"
+      [severity]="action.severity"
+    ></p-button>
+  }
+</div>

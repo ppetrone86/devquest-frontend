@@ -1,0 +1,15 @@
+<p-floatlabel variant="on">
+  <textarea
+    pTextarea
+    id="{{ model.name }}"
+    name="{{ model.name }}"
+    placeholder="{{ model.placeholder }}"
+    autocomplete="off"
+    [formControl]="control"
+    [attr.minlength]="getValidatorValue(fieldValidatorType.MIN_LENGTH)"
+    [attr.maxlength]="getValidatorValue(fieldValidatorType.MAX_LENGTH)"
+    [ngClass]="{ 'ng-dirty': control.invalid }"
+  ></textarea>
+  <label for="{{ model.name }}">{{ model.label }}</label>
+  <app-field-errors [control]="control" />
+</p-floatlabel>

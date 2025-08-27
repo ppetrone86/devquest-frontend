@@ -1,0 +1,40 @@
+<div class="flex items-center justify-between">
+  <h3>{{ title | translate }}</h3>
+  <div class="flex items-center">
+    <p-button
+      *appPermissioned="addActionPermissions"
+      [label]="addActionLabel | translate"
+      icon="pi pi-plus"
+      class="mr-2"
+      (click)="addAction.emit()"
+    ></p-button>
+    <p-iconfield iconPosition="left" class="ml-auto mr-2">
+      <p-inputicon>
+        <i class="pi pi-search"></i>
+      </p-inputicon>
+      <input
+        #searchText
+        pInputText
+        type="text"
+        (input)="searchAction.emit(searchText.value)"
+        [placeholder]="searchPlaceholder | translate"
+      />
+    </p-iconfield>
+    <ng-container *ngIf="hasSearchForm">
+      <p-button
+        #searchButton
+        (click)="searchPopover.toggle($event)"
+        icon="pi pi-filter"
+        class="ml-auto"
+        [rounded]="true"
+        severity="secondary"
+      >
+      </p-button>
+      <p-popover #searchPopover appendTo="body">
+        <div class="w-96 pb-4 pl-4 pr-4">
+          <app-form-viewport [entity]="searchFormEntity" hideCard="true"></app-form-viewport>
+        </div>
+      </p-popover>
+    </ng-container>
+  </div>
+</div>

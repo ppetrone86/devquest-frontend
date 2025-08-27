@@ -1,0 +1,6 @@
+@if (loading) {
+  <app-page-loader />
+} @else {
+  <app-toast class="fixed z-toast" />
+  <router-outlet />
+}

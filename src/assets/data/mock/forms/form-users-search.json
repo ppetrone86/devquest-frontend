@@ -1,0 +1,46 @@
+{
+  "fields": [
+    {
+      "type": "text",
+      "name": "fullName",
+      "label": "components.usersSearchForm.fields.fullName.label",
+      "placeholder": "components.usersSearchForm.fields.fullName.placeholder",
+      "value": ""
+    },
+    {
+      "type": "text",
+      "name": "email",
+      "label": "components.usersSearchForm.fields.email.label",
+      "placeholder": "components.usersSearchForm.fields.email.placeholder",
+      "value": ""
+    },
+    {
+      "type": "radio",
+      "name": "gender",
+      "label": "components.usersSearchForm.fields.gender.label",
+      "placeholder": "components.usersSearchForm.fields.gender.placeholder",
+      "options": [
+        { "value": "male", "label": "components.usersSearchForm.fields.gender.options.male" },
+        { "value": "female", "label": "components.usersSearchForm.fields.gender.options.female" },
+        { "value": "other", "label": "components.usersSearchForm.fields.gender.options.other" }
+      ]
+    },
+    {
+      "type": "text",
+      "name": "phone",
+      "label": "components.usersSearchForm.fields.phone.label",
+      "placeholder": "components.usersSearchForm.fields.phone.placeholder",
+      "value": ""
+    }
+  ],
+  "actions": [
+    {
+      "type": "submit",
+      "label": "common.actions.applyFilters.title"
+    },
+    {
+      "type": "reset",
+      "label": "common.actions.reset.title"
+    }
+  ]
+}

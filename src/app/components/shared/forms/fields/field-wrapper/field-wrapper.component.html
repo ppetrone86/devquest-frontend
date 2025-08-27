@@ -1,0 +1,15 @@
+<div class="flex flex-col gap-2">
+  @if (!noLabels) {
+    <label [for]="model.name">
+      {{ model.label | translate }}
+      @if (required) {
+        <span class="text-primary">*</span>
+      }
+    </label>
+    @if (model.helpText) {
+      <small>{{ model.helpText || '' | translate }}</small>
+    }
+  }
+  <ng-content />
+  <app-field-errors [control]="control" />
+</div>

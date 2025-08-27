@@ -1,0 +1,74 @@
+@import 'tailwindcss';
+@plugin "tailwindcss-primeui";
+
+@custom-variant dark (&:is([data-theme="dark"] *));
+
+@theme {
+  --background-image-impresoft-light: url(/assets/images/impresoft-bg-light.png);
+  --background-image-impresoft-dark: url(/assets/images/impresoft-bg-dark.png);
+
+  --spacing-topbar: var(--wlb-topbar-height);
+  --spacing-sidebar: var(--wlb-sidebar-width);
+  --spacing-sidebar-out: var(--wlb-sidebar-outer-width);
+  --spacing-sidebar-space: var(--wlb-sidebar-space);
+  --spacing-sidebar-space-neg: -var(--wlb-sidebar-space-negative);
+  --spacing-sidebar-top: var(--wlb-sidebar-top);
+
+  --color-error: var(--p-error);
+
+  --color-overlay-modal-background: var(--p-overlay-modal-background);
+
+  --color-ground-background: var(--p-ground-background);
+
+  --color-message-user-border: var(--p-chat-message-user-border);
+  --color-message-user-muted: var(--p-chat-message-user-muted-color);
+
+  --color-message-model-border: var(--p-chat-message-model-border);
+  --color-message-model-muted: var(--p-chat-message-model-muted-color);
+
+  --font-default:
+    Manrope, ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol',
+    'Noto Color Emoji';
+
+  --z-index-topbar: 1000;
+  --z-index-toast: 1100;
+}
+
+/*
+  The default border color has changed to `currentcolor` in Tailwind CSS v4,
+  so we've added these compatibility styles to make sure everything still
+  looks the same as it did with Tailwind CSS v3.
+
+  If we ever want to remove these styles, we need to add an explicit border
+  color utility to any element that depends on these defaults.
+*/
+@layer base {
+  *,
+  ::after,
+  ::before,
+  ::backdrop,
+  ::file-selector-button {
+    border-color: var(--color-gray-200, currentcolor);
+  }
+}
+
+@utility page-content {
+  padding: 1rem;
+}
+
+@layer components {
+  :root {
+    --wlb-topbar-height: 4rem;
+
+    --wlb-sidebar-width: 19rem;
+    --wlb-sidebar-space: 1rem;
+    --wlb-sidebar-space-negative: auto;
+    --wlb-sidebar-outer-width: calc(var(--wlb-sidebar-width) + var(--wlb-sidebar-space));
+    --wlb-sidebar-top: calc(var(--wlb-topbar-height) + var(--wlb-sidebar-space));
+
+    @media not all and (min-width: 640px) {
+      --wlb-sidebar-width: auto;
+      --wlb-sidebar-other-pos: var(--wlb-sidebar-space);
+    }
+  }
+}

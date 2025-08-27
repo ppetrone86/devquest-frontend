@@ -1,0 +1,109 @@
+{
+  "title": "Expense Report Submission",
+  "subtitle": "Submit your monthly expenses",
+  "fields": [
+    {
+      "type": "text",
+      "name": "employeeName",
+      "label": "Employee Name",
+      "placeholder": "Enter your name",
+      "validators": [
+        {
+          "type": "required",
+          "message": "Employee name is required"
+        },
+        {
+          "type": "minLength",
+          "value": 2,
+          "message": "Name must be at least 2 characters long"
+        }
+      ]
+    },
+    {
+      "type": "number",
+      "name": "amount",
+      "label": "Expense Amount",
+      "placeholder": "Enter the amount",
+      "validators": [
+        {
+          "type": "required",
+          "message": "Amount is required"
+        },
+        {
+          "type": "min",
+          "value": 1,
+          "message": "Amount must be greater than 0"
+        }
+      ]
+    },
+    {
+      "type": "date",
+      "name": "expenseDate",
+      "label": "Expense Date",
+      "validators": [
+        {
+          "type": "required",
+          "message": "Date is required"
+        }
+      ]
+    },
+    {
+      "type": "file",
+      "name": "receipt",
+      "label": "Upload Receipt",
+      "validators": [
+        {
+          "type": "required",
+          "message": "Receipt is required"
+        }
+      ]
+    },
+    {
+      "type": "select",
+      "name": "expenseType",
+      "label": "Expense Type",
+      "options": [
+        { "value": "travel", "label": "Travel" },
+        { "value": "food", "label": "Food" },
+        { "value": "supplies", "label": "Supplies" }
+      ],
+      "validators": [
+        {
+          "type": "required",
+          "message": "Please select an expense type"
+        }
+      ]
+    },
+    {
+      "type": "checkbox",
+      "name": "confirm",
+      "label": "I confirm that the information provided is accurate",
+      "validators": [
+        {
+          "type": "required",
+          "message": "You must confirm this statement"
+        }
+      ]
+    },
+    {
+      "type": "hidden",
+      "name": "reportId",
+      "label": "Report ID",
+      "validators": []
+    }
+  ],
+  "actions": [
+    {
+      "type": "submit",
+      "label": "Submit Report",
+      "actionUrl": "/api/submit-expense"
+    },
+    {
+      "type": "reset",
+      "label": "Clear"
+    }
+  ],
+  "layout": {
+    "columns": 2
+  }
+}

@@ -1,0 +1,105 @@
+{
+  "title": "Event Registration Form",
+  "subtitle": "Sign up for the event",
+  "columns": {
+    "md": 2,
+    "xl": 3,
+    "2xl": 4
+  },
+  "fields": [
+    {
+      "type": "text",
+      "name": "fullName",
+      "label": "Full Name",
+      "columns": {
+        "md": 2,
+        "xl": 3
+      },
+      "placeholder": "Enter your full name",
+      "validators": [
+        {
+          "type": "required",
+          "message": "Full Name is required"
+        }
+      ]
+    },
+    {
+      "type": "email",
+      "name": "email",
+      "label": "Email Address",
+      "placeholder": "Enter your email",
+      "validators": [
+        {
+          "type": "required",
+          "message": "Email is required"
+        },
+        {
+          "type": "pattern",
+          "value": "^[^@\\s]+@[^@\\s]+\\.[^@\\s]+$",
+          "message": "Please enter a valid email address"
+        }
+      ]
+    },
+    {
+      "type": "date",
+      "name": "eventDate",
+      "label": "Event Date",
+      "placeholder": "Select the event date",
+      "validators": [
+        {
+          "type": "required",
+          "message": "Please select the event date"
+        }
+      ]
+    },
+    {
+      "type": "datetime",
+      "name": "eventDateTime",
+      "label": "Event Date Time",
+      "placeholder": "Select the event date and time",
+      "validators": [
+        {
+          "type": "required",
+          "message": "Please select the event date and time"
+        }
+      ]
+    },
+    {
+      "type": "time",
+      "name": "eventTime",
+      "label": "Event Time",
+      "placeholder": "Select the event time",
+      "validators": [
+        {
+          "type": "required",
+          "message": "Please select the event time"
+        }
+      ]
+    },
+    {
+      "type": "checkbox",
+      "name": "newsletter",
+      "label": "Subscribe to newsletter"
+    },
+    {
+      "type": "textarea",
+      "name": "comments",
+      "label": "Additional Comments",
+      "placeholder": "Write your comments here"
+    }
+  ],
+  "actions": [
+    {
+      "type": "submit",
+      "label": "Register",
+      "actionUrl": "/api/event/register"
+    },
+    {
+      "type": "reset",
+      "label": "Reset"
+    }
+  ],
+  "layout": {
+    "columns": 1
+  }
+}

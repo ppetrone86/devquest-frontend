@@ -1,0 +1,62 @@
+// Styled following https://dev.to/madsstoumann/a-guide-to-styling-tables-28d2
+
+.table-container {
+  display: block;
+  max-width: 100%;
+  overflow-x: auto;
+}
+
+table {
+  border-collapse: initial;
+  border-spacing: 0;
+  color: var(--p-content-color);
+  background-color: var(--p-content-background);
+
+  tr:last-of-type {
+    td {
+      border-block-end-width: 1px;
+    }
+  }
+
+  th {
+    font-weight: 600;
+    text-align: start;
+    background-color: var(--p-content-hover-background);
+
+    &:first-of-type {
+      border-start-start-radius: var(--p-border-radius-md);
+    }
+    &:last-of-type {
+      border-start-end-radius: var(--p-border-radius-md);
+    }
+  }
+  tr {
+    transition: background-color 0.2s ease-in-out;
+    &:hover {
+      color: var(--p-content-hover-color);
+      background-color: var(--p-content-hover-background);
+    }
+
+    &:last-of-type {
+      & td {
+        &:first-of-type {
+          border-end-start-radius: var(--p-border-radius-md);
+        }
+        &:last-of-type {
+          border-end-end-radius: var(--p-border-radius-md);
+        }
+      }
+    }
+  }
+}
+
+:is(td, th) {
+  padding: 0.5ch 1ch;
+  border-color: var(--p-content-border-color);
+
+  border-block-width: 1px 0;
+  border-inline-width: 1px 0;
+  &:last-of-type {
+    border-inline-end-width: 1px;
+  }
+}

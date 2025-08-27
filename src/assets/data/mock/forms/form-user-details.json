@@ -1,0 +1,210 @@
+{
+  "title": "components.userDetails.form.title",
+  "subtitle": "components.userDetails.form.subtitle",
+  "columns": {
+    "md": 2,
+    "xl": 2,
+    "2xl": 2
+  },
+  "fields": [
+    {
+      "type": "text",
+      "name": "firstName",
+      "label": "components.userDetails.fields.firstname.label",
+      "placeholder": "components.userDetails.fields.firstname.placeholder",
+      "helpText": "components.userDetails.fields.firstname.helpText",
+      "value": "",
+      "validators": [
+        {
+          "type": "required",
+          "message": "REQUIRED"
+        }
+      ]
+    },
+    {
+      "type": "text",
+      "name": "lastName",
+      "label": "components.userDetails.fields.lastname.label",
+      "placeholder": "components.userDetails.fields.lastname.placeholder",
+      "helpText": "components.userDetails.fields.lastname.helpText",
+      "value": "",
+      "validators": [
+        {
+          "type": "required",
+          "message": "REQUIRED"
+        }
+      ]
+    },
+    {
+      "type": "number",
+      "name": "age",
+      "label": "components.userDetails.fields.age.label",
+      "placeholder": "components.userDetails.fields.age.placeholder",
+      "helpText": "components.userDetails.fields.age.helpText",
+      "value": "",
+      "validators": [
+        {
+          "type": "required",
+          "message": "REQUIRED"
+        },
+        {
+          "type": "min",
+          "value": 18,
+          "message": "MIN"
+        },
+        {
+          "type": "max",
+          "value": 70,
+          "message": "MAX"
+        }
+      ]
+    },
+    {
+      "type": "text",
+      "name": "phone",
+      "label": "components.userDetails.fields.phoneNumber.placeholder",
+      "placeholder": "components.userDetails.fields.phoneNumber.placeholder",
+      "helpText": "components.userDetails.fields.phoneNumber.helpText",
+      "value": "",
+      "validators": [
+        {
+          "type": "required",
+          "message": "REQUIRED"
+        }
+      ]
+    },
+    {
+      "columns": {
+        "md": 2,
+        "xl": 2
+      },
+      "type": "text",
+      "name": "email",
+      "label": "components.userDetails.fields.email.label",
+      "placeholder": "components.userDetails.fields.email.placeholder",
+      "helpText": "components.userDetails.fields.email.helpText",
+      "value": "",
+      "validators": [
+        {
+          "type": "required",
+          "message": "REQUIRED"
+        },
+        {
+          "type": "email",
+          "message": "EMAIL"
+        }
+      ]
+    },
+    {
+      "columns": {
+        "md": 2,
+        "xl": 2
+      },
+      "type": "text",
+      "name": "confirm-email",
+      "label": "components.userDetails.fields.confirmEmail.placeholder",
+      "placeholder": "components.userDetails.fields.confirmEmail.placeholder",
+      "helpText": "components.userDetails.fields.confirmEmail.helpText",
+      "value": "",
+      "validators": [
+        {
+          "type": "required",
+          "message": "REQUIRED"
+        },
+        {
+          "type": "email",
+          "message": "EMAIL"
+        }
+      ],
+      "asyncValidators": [
+        {
+          "type": "asyncEmailMissMatch",
+          "compareTo": "email"
+        }
+      ]
+    },
+    {
+      "type": "text",
+      "name": "address-address",
+      "label": "components.userDetails.fields.address.street.label",
+      "placeholder": "components.userDetails.fields.address.street.placeholder",
+      "helpText": "components.userDetails.fields.address.street.helpText",
+      "value": "",
+      "validators": [
+        {
+          "type": "required",
+          "message": "REQUIRED"
+        }
+      ]
+    },
+    {
+      "type": "text",
+      "name": "address-postalCode",
+      "label": "components.userDetails.fields.address.zipCode.label",
+      "placeholder": "components.userDetails.fields.address.zipCode.placeholder",
+      "helpText": "components.userDetails.fields.address.zipCode.helpText",
+      "value": "",
+      "validators": [
+        {
+          "type": "required",
+          "message": "REQUIRED"
+        }
+      ]
+    },
+    {
+      "type": "text",
+      "name": "address-city",
+      "label": "components.userDetails.fields.address.city.label",
+      "placeholder": "components.userDetails.fields.address.city.placeholder",
+      "helpText": "components.userDetails.fields.address.city.helpText",
+      "value": "",
+      "validators": [
+        {
+          "type": "required",
+          "message": "REQUIRED"
+        }
+      ]
+    },
+    {
+      "type": "text",
+      "name": "address-state",
+      "label": "components.userDetails.fields.address.province.label",
+      "placeholder": "components.userDetails.fields.address.province.placeholder",
+      "helpText": "components.userDetails.fields.address.province.helpText",
+      "value": "",
+      "validators": [
+        {
+          "type": "required",
+          "message": "REQUIRED"
+        }
+      ]
+    },
+    {
+      "type": "text",
+      "name": "address-country",
+      "label": "components.userDetails.fields.address.country.label",
+      "placeholder": "components.userDetails.fields.address.country.placeholder",
+      "helpText": "components.userDetails.fields.address.country.helpText",
+      "value": "",
+      "validators": [
+        {
+          "type": "required",
+          "message": "REQUIRED"
+        }
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "type": "submit",
+      "label": "common.actions.submit.title"
+    },
+    {
+      "type": "reset",
+      "label": "common.actions.reset.title"
+    }
+  ],
+  "layout": {
+    "columns": 2
+  }
+}

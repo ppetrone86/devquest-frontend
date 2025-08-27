@@ -1,0 +1,119 @@
+{
+  "title": "Product Feedback Form",
+  "subtitle": "Share your experience with our product",
+  "fields": [
+    {
+      "type": "text",
+      "name": "name",
+      "label": "Your Name",
+      "placeholder": "Enter your name",
+      "validators": [
+        {
+          "type": "required",
+          "message": "Name is required"
+        },
+        {
+          "type": "minLength",
+          "value": 3,
+          "message": "Name must be at least 3 characters long"
+        }
+      ]
+    },
+    {
+      "type": "textarea",
+      "name": "feedback",
+      "label": "Feedback",
+      "placeholder": "Write your feedback here...",
+      "validators": [
+        {
+          "type": "required",
+          "message": "Feedback is required"
+        },
+        {
+          "type": "maxLength",
+          "value": 500,
+          "message": "Feedback cannot exceed 500 characters"
+        }
+      ]
+    },
+    {
+      "type": "number",
+      "name": "rating",
+      "label": "Rating",
+      "placeholder": "Rate from 1 to 5",
+      "validators": [
+        {
+          "type": "required",
+          "message": "Rating is required"
+        },
+        {
+          "type": "min",
+          "value": 1,
+          "message": "Rating must be at least 1"
+        },
+        {
+          "type": "max",
+          "value": 5,
+          "message": "Rating cannot exceed 5"
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "recommend",
+      "label": "Would you recommend this product?",
+      "options": [
+        { "value": "yes", "label": "Yes" },
+        { "value": "no", "label": "No" }
+      ],
+      "validators": [
+        {
+          "type": "required",
+          "message": "Please select an option"
+        }
+      ]
+    },
+    {
+      "type": "select",
+      "name": "productCategory",
+      "label": "Product Category",
+      "options": [
+        { "value": "electronics", "label": "Electronics" },
+        { "value": "apparel", "label": "Apparel" },
+        { "value": "home", "label": "Home & Kitchen" }
+      ],
+      "validators": [
+        {
+          "type": "required",
+          "message": "Please select a category"
+        }
+      ]
+    },
+    {
+      "type": "checkbox",
+      "name": "subscribe",
+      "label": "Subscribe to our newsletter",
+      "validators": []
+    },
+    {
+      "type": "hidden",
+      "name": "feedbackId",
+      "label": "Feedback ID",
+      "validators": []
+    }
+  ],
+  "actions": [
+    {
+      "type": "submit",
+      "label": "Submit Feedback",
+      "actionUrl": "/api/submit-feedback"
+    },
+    {
+      "type": "reset",
+      "label": "Clear"
+    }
+  ],
+  "layout": {
+    "columns": 1
+  }
+}

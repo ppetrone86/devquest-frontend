@@ -1,0 +1,16 @@
+<!-- TODO: check with p-floatlabel because it doesn't works-->
+<label for="{{ model.name }}">{{ model.label }}</label>
+<div class="flex flex-col gap-2">
+  @for (option of model.options; track option) {
+    <div class="field-radiobutton">
+      <p-radiobutton
+        [inputId]="option.value"
+        [value]="option.value"
+        [formControl]="control"
+        [ngClass]="{ 'ng-dirty': control.invalid }"
+      ></p-radiobutton>
+      <label [for]="option.value" class="ml-2">{{ option.label | translate }}</label>
+    </div>
+  }
+</div>
+<app-field-errors [control]="control"></app-field-errors>

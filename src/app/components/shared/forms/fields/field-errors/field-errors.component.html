@@ -1,0 +1,33 @@
+@if (control.invalid && (control.dirty || !control.untouched)) {
+  <ul class="field-error">
+    @if (control.hasError('required')) {
+      <li>{{ 'common.fieldValidators.required' | translate }}</li>
+    }
+    @if (control.hasError('minlength')) {
+      <li>{{
+        'common.fieldValidators.minLength' | translate: { value: control.getError('minlength')?.requiredLength }
+      }}</li>
+    }
+    @if (control.hasError('maxlength')) {
+      <li>{{
+        'common.fieldValidators.maxLength' | translate: { value: control.getError('maxlength')?.requiredLength }
+      }}</li>
+    }
+    @if (control.hasError('pattern')) {
+      <li>{{ 'common.fieldValidators.pattern' | translate }}</li>
+    }
+    @if (control.hasError('email')) {
+      <li>{{ 'common.fieldValidators.email' | translate }}</li>
+    }
+    @if (control.hasError('min')) {
+      <li>{{ 'common.fieldValidators.min' | translate: { value: control.getError('min')?.min } }}</li>
+    }
+    @if (control.hasError('max')) {
+      <li>{{ 'common.fieldValidators.max' | translate: { value: control.getError('max')?.max } }}</li>
+    }
+
+    @for (error of asyncErrors(); track $index) {
+      <li>{{ error | translate }}</li>
+    }
+  </ul>
+}
