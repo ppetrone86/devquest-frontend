@@ -4,8 +4,8 @@
 @custom-variant dark (&:is([data-theme="dark"] *));
 
 @theme {
-  --background-image-impresoft-light: url(/assets/images/impresoft-bg-light.png);
-  --background-image-impresoft-dark: url(/assets/images/impresoft-bg-dark.png);
+  --background-image-dev-quest-light: url(/assets/images/dev-quest-bg-light.png);
+  --background-image-dev-quest-dark: url(/assets/images/dev-quest-bg-dark.png);
 
   --spacing-topbar: var(--wlb-topbar-height);
   --spacing-sidebar: var(--wlb-sidebar-width);

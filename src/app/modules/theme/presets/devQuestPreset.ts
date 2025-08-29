@@ -8,17 +8,23 @@ import { definePreset } from '@primeuix/themes';
 export const DevQuestPreset = definePreset(Aura, {
   semantic: {
     primary: {
-      50: '#FFF9E6',
-      100: '#FFF3CC',
-      200: '#FFE799',
-      300: '#FEDB67',
-      400: '#FECF34',
-      500: '#FDC301',
-      600: '#CB9C01',
-      700: '#987501',
-      800: '#664E00',
-      900: '#332700',
-      950: '#191300',
+      50:  '#F5F3FF',
+      100: '#EDE9FE',
+      200: '#DDD6FE',
+      300: '#C4B5FD',
+      400: '#A78BFA',
+      500: '#8B5CF6', // Violet “main”
+      600: '#7C3AED',
+      700: '#6D28D9',
+      800: '#5B21B6',
+      900: '#4C1D95',
+      950: '#2E1065',
+    },
+    accent: {
+      100: '#D1FAE5',
+      300: '#6EE7B7',
+      500: '#10B981', // emerald green accent
+      700: '#047857',
     },
     colorScheme: {
       light: {
@@ -26,7 +32,11 @@ export const DevQuestPreset = definePreset(Aura, {
           contrastColor: '{zinc.900}',
         },
       },
-      dark: {},
+      dark: {
+        primary: {
+          contrastColor: '{zinc.50}',
+        },
+      },
     },
   },
 });
