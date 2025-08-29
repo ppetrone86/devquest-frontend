@@ -1,6 +1,5 @@
 import { Routes } from '@angular/router';
 import { authRoutes } from '@modules/auth/auth.routes';
-import { productRoutes } from '@modules/product/product.routes';
 import { profileRoutes } from '@modules/profile/profile.routes';
 import { userRoutes } from '@modules/user/user.routes';
 import { AuthGuard } from './guards/auth.guard';
@@ -47,7 +46,6 @@ export const routes: Routes = [
             data: { permissions: ['dynamic_form.{entity}.read'] },
             loadComponent: () => import('./pages/form-page/form-page.component'),
           },
-          ...productRoutes,
           ...userRoutes,
           ...profileRoutes,
         ],

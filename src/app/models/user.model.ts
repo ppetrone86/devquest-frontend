@@ -25,3 +25,8 @@ export interface UserModel {
   lastLogin: string;
   createdAt: string;
 }
+
+export interface Player {
+  id: string;
+  nickname: string;
+}

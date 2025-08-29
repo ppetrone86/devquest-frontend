@@ -2,7 +2,6 @@ import { formActionReducer, initialFormActionState } from '@components/shared/fo
 import { initialState as initialToastState, toastReducer } from '@components/shared/notifications/toast/toast.reducer';
 import { logoutSuccess } from '@modules/auth/auth.actions';
 import { authReducer, initialState as initialAuthState } from '@modules/auth/auth.reducer';
-import { initialState as initialProductState, productReducer } from '@modules/product/product.reducer';
 import { themeReducer } from '@modules/theme/theme.reducer';
 import { initialState as initialUserState, userReducer } from '@modules/user/user.reducer';
 import { ActionReducer, ActionReducerMap, MetaReducer } from '@ngrx/store';
@@ -13,7 +12,6 @@ export const reducers: ActionReducerMap<any> = {
   uiState: uiReducer,
   themeState: themeReducer,
   authState: authReducer,
-  productState: productReducer,
   userState: userReducer,
   toastState: toastReducer,
   formActionState: formActionReducer,
@@ -27,7 +25,6 @@ export function clearState(reducer: ActionReducer<any>): ActionReducer<any> {
         uiState: initialUIState,
         themeState: state.themeState,
         authState: initialAuthState,
-        productState: initialProductState,
         userState: initialUserState,
         toastState: initialToastState,
         formActionState: initialFormActionState,

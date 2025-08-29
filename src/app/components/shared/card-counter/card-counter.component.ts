@@ -1,6 +1,4 @@
 import { Component, effect, inject, Input, signal } from '@angular/core';
-import * as ProductActions from '@modules/product/product.actions';
-import { selectorProductState_total } from '@modules/product/product.selectors';
 import * as UserActions from '@modules/user/user.actions';
 import { selectorUserState_total } from '@modules/user/user.selectors';
 import { Store } from '@ngrx/store';
@@ -29,10 +27,6 @@ export class CardCounterComponent {
       let selector;
 
       switch (this.type) {
-        case 'product':
-          selector = selectorProductState_total;
-          this._store.dispatch(ProductActions.fetchAll());
-          break;
         case 'user':
           selector = selectorUserState_total;
           this._store.dispatch(UserActions.fetchAll({}));
