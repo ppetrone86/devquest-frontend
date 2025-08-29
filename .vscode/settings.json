@@ -1,0 +1,5 @@
+{
+  "tailwindCSS.rootFontSize": 14,
+  "tailwindCSS.experimental.classRegex": ["[^\\s]Class=\"([^\"]+)\""],
+  "SAP HANA Database Explorer.UseObjectsDefinitionForSqlGeneration.RetentionTime": 7
+}
