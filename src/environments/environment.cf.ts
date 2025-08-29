@@ -1,6 +1,7 @@
 export const environment = {
   production: false,
   enableLogging: true,
+  mock: true,
   dryRun: false,
   appSettings: {
     title: 'Dev Quest',
@@ -18,6 +19,16 @@ export const environment = {
         pause: 100,
       },
     },
+  },
+  mocks: {
+    networkDelayMs: 200,
+    defaultUser: { id: 'mock-user', email: 'mock@devquest.local', roles: ['Admin'] },
+    token: {
+      access_token: 'mock-access-token',
+      refresh_token: 'mock-refresh-token',
+      token_type: 'Bearer',
+      expires_in: 3600
+    }
   },
   api: {
     devQuest: {

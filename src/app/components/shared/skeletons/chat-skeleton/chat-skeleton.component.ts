@@ -1,6 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { $dt } from '@primeng/themes';
 import { SkeletonModule } from 'primeng/skeleton';
+import { $dt } from '@primeuix/themes';
 
 const MinWidthPerc = 20;
 const MaxWidthPerc = 75;

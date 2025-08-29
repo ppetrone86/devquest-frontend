@@ -1,5 +1,4 @@
 import { Routes } from '@angular/router';
-import { aiRoutes } from '@modules/ai/ai.routes';
 import { authRoutes } from '@modules/auth/auth.routes';
 import { productRoutes } from '@modules/product/product.routes';
 import { profileRoutes } from '@modules/profile/profile.routes';
@@ -51,7 +50,6 @@ export const routes: Routes = [
           ...productRoutes,
           ...userRoutes,
           ...profileRoutes,
-          ...aiRoutes,
         ],
       },
     ],

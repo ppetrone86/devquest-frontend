@@ -10,6 +10,7 @@ import { PKCEService } from '@services/pkce.service';
 import { UtilsService } from '@services/utils.service';
 import { Observable, take } from 'rxjs';
 import { AuthState } from './auth.state';
+import {environment} from "@src/environments/environment";
 
 @Injectable({
   providedIn: 'root',
@@ -24,6 +25,9 @@ export class AuthenticationService extends ApiService {
 
   private _refreshTokenTimer: any | null;
 
+  private _isMockEnabled(): boolean {
+    return environment.mock;
+  }
   login(): void {}
 
   logout(data: any): Observable<UserModel> {
@@ -95,6 +99,19 @@ export class AuthenticationService extends ApiService {
   }
 
   buildAuthServerUrl(authState: AuthState) {
-    return this.provider.oauth2.buildAuthServerUrl(authState);
+    return this._isMockEnabled()
+      ? this._buildMockAuthServerUrl()
+      : this.provider.oauth2.buildAuthServerUrl(authState)
+  }
+
+  private _buildMockAuthServerUrl() {
+    const params = new URLSearchParams();
+    params.set('code', 'MSW_CODE');
+    params.set('state', 'MSW_STATE');
+    params.set('nonce', 'MSW_NONCE');
+
+    const redirectPath = new URL(environment.api.devQuest.redirectURI).pathname;
+    const base = document.baseURI.replace(/\/$/, '');
+    return `${base}${redirectPath}?${params.toString()}`;
   }
 }
