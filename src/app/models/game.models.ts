@@ -39,7 +39,7 @@ export enum GameStatus {
 export interface GameDecks {
   roleDeck: RoleCard[];
   taskDeck: TaskCard[];
-  actionEventDeck: PlayableCard[];
+  drawDeck: PlayableCard[];
   discardDeck: PlayableCard[];
 }
 

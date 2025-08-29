@@ -1,5 +1,6 @@
 import { Routes } from '@angular/router';
 import { authRoutes } from '@modules/auth/auth.routes';
+import { gameRoutes } from '@modules/game/game.routes';
 import { profileRoutes } from '@modules/profile/profile.routes';
 import { userRoutes } from '@modules/user/user.routes';
 import { AuthGuard } from './guards/auth.guard';
@@ -31,7 +32,7 @@ export const routes: Routes = [
       },
       {
         path: 'private',
-        loadComponent: () => import('./components/layouts/private-layout/private-layout.component'),
+        loadComponent: () => import('@components/layouts/private-layout/private-layout.component'),
         canActivate: [AuthGuard],
         children: [
           {
@@ -49,6 +50,12 @@ export const routes: Routes = [
           ...userRoutes,
           ...profileRoutes,
         ],
+      },
+      {
+        path: 'games',
+        loadComponent: () => import('@components/layouts/game-layout/game-layout.component'),
+        canActivate: [AuthGuard],
+        children: [...gameRoutes],
       },
     ],
   },

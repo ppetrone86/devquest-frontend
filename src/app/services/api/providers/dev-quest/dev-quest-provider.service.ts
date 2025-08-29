@@ -1,34 +1,34 @@
 import { inject, Injectable } from '@angular/core';
-import { DevQuestChatProvider } from '@services/api/providers/dev-quest/dev-quest-chat-provider.service';
-import { DevQuestUserProvider } from '@services/api/providers/dev-quest/dev-quest-user-provider.service';
 import { DevQuestAuth2Provider } from '@services/api/providers/dev-quest/dev-quest-auth-provider';
+import { DevQuestGameProvider } from '@services/api/providers/dev-quest/dev-quest-game-provider.service';
+import { DevQuestUserProvider } from '@services/api/providers/dev-quest/dev-quest-user-provider.service';
 
 @Injectable({
   providedIn: 'root',
 })
 export class DevQuestProvider {
-  private _devQuestProChatProvider = inject(DevQuestChatProvider);
-  private _devQuestProAuth2Provider = inject(DevQuestAuth2Provider);
-  private _devQuestProUserProvider = inject(DevQuestUserProvider);
+  private _devQuestAuth2Provider = inject(DevQuestAuth2Provider);
+  private _devQuestUserProvider = inject(DevQuestUserProvider);
+  private _devQuestGameProvider = inject(DevQuestGameProvider);
 
   /**
    * Provides access to OAuth2 authentication services.
    */
   public get oauth2(): DevQuestAuth2Provider {
-    return this._devQuestProAuth2Provider;
-  }
-
-  /**
-   * Provides access to chatbot services.
-   */
-  public get chatbot(): DevQuestChatProvider {
-    return this._devQuestProChatProvider;
+    return this._devQuestAuth2Provider;
   }
 
   /**
    * Provides access to user services.
    */
   public get user(): DevQuestUserProvider {
-    return this._devQuestProUserProvider;
+    return this._devQuestUserProvider;
+  }
+
+  /**
+   * Provides access to game services.
+   */
+  public game(): DevQuestGameProvider {
+    return this._devQuestGameProvider;
   }
 }
