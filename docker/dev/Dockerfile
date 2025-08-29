@@ -1,6 +1,6 @@
 FROM node:22-alpine
 
-WORKDIR /white-label
+WORKDIR /dev-quest
 
 COPY package*.json ./
 

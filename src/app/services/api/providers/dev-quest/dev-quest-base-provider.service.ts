@@ -5,7 +5,7 @@ import { environment } from '@src/environments/environment';
 @Injectable({
   providedIn: 'root',
 })
-export class WhiteLabelBaseProvider extends ApiProvider {
+export class DevQuestBaseProvider extends ApiProvider {
   // Base URL for White Label API
   protected readonly baseUrl = `${environment.api.whiteLabel.url}`;
 }

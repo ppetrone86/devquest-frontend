@@ -18,7 +18,7 @@ RUN ng build --configuration=kyma
 FROM nginx:alpine AS runtime
 
 # Copy compiled Angular app to Nginx
-COPY --from=build /app/dist/white-label-kyma /usr/share/nginx/html
+COPY --from=build /app/dist/dev-quest-kyma /usr/share/nginx/html
 
 # Copy custom Nginx config
 COPY docker/prod/nginx.conf /etc/nginx/conf.d/default.conf

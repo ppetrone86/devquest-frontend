@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { AuthState } from '@modules/auth/auth.state';
-import { WhiteLabelBaseProvider } from '@services/api/providers/white-label/white-label-base-provider';
+import { DevQuestBaseProvider } from '@services/api/providers/white-label/dev-quest-base-provider.service';
 import { LogService } from '@services/log.service';
 import { environment } from '@src/environments/environment';
 import { Observable } from 'rxjs';
@@ -8,7 +8,7 @@ import { Observable } from 'rxjs';
 @Injectable({
   providedIn: 'root',
 })
-export class WhiteLabelAuth2Provider extends WhiteLabelBaseProvider {
+export class DevQuestAuth2Provider extends DevQuestBaseProvider {
   private readonly _clientId: string = environment.api.whiteLabel.clientId;
   private readonly _redirectUri: string = environment.api.whiteLabel.redirectURI;
   private readonly _refreshTokenOffset = environment.api.whiteLabel.refreshTokenOffset;

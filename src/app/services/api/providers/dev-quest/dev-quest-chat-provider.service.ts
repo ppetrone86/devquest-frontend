@@ -1,11 +1,11 @@
 import { Injectable } from '@angular/core';
-import { WhiteLabelBaseProvider } from '@services/api/providers/white-label/white-label-base-provider';
+import { DevQuestBaseProvider } from '@services/api/providers/white-label/dev-quest-base-provider.service';
 import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root',
 })
-export class WhiteLabelChatProvider extends WhiteLabelBaseProvider {
+export class DevQuestChatProvider extends DevQuestBaseProvider {
   constructor() {
     super();
     this.endpoint = 'rest/services/chatbot';
