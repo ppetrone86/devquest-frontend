@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { DevQuestBaseProvider } from '@services/api/providers/white-label/dev-quest-base-provider.service';
+import { DevQuestBaseProvider } from '@services/api/providers/dev-quest/dev-quest-base-provider.service';
 import { Observable } from 'rxjs';
 
 @Injectable({

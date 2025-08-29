@@ -22,7 +22,7 @@ export function authInterceptor(req: HttpRequest<unknown>, next: HttpHandlerFn):
   );
 
   function handleOAuthRequest(clonedReq: HttpRequest<unknown>) {
-    const basicAuth = `Basic ${btoa(`${environment.api.whiteLabel.clientId}:${environment.api.whiteLabel.clientSecret}`)}`;
+    const basicAuth = `Basic ${btoa(`${environment.api.devQuest.clientId}:${environment.api.devQuest.clientSecret}`)}`;
     return clonedReq.clone({
       headers: clonedReq.headers
         .set('Content-type', 'application/x-www-form-urlencoded; charset=utf-8')

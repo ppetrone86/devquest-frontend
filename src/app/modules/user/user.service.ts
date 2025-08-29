@@ -4,7 +4,7 @@ import { UserModel } from '@models/user.model';
 import { ApiService } from '@services/api/api.service';
 import { DummyProvider } from '@services/api/providers/dummy/dummy-provider';
 
-import { WhiteLabelProvider } from '@services/api/providers/white-label/white-label-provider';
+import { DevQuestProvider } from '@services/api/providers/dev-quest/dev-quest-provider.service';
 import { LogService } from '@services/log.service';
 import { Observable } from 'rxjs';
 
@@ -17,7 +17,7 @@ interface UserApiResponse {
   providedIn: 'root',
 })
 export class UserService extends ApiService {
-  protected provider = inject(WhiteLabelProvider);
+  protected provider = inject(DevQuestProvider);
   protected dummyProvider = inject(DummyProvider);
 
   /**

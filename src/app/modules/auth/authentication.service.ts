@@ -4,7 +4,7 @@ import * as AuthActions from '@modules/auth/auth.actions';
 import { selectorAuthState } from '@modules/auth/auth.selectors';
 import { Store } from '@ngrx/store';
 import { ApiService } from '@services/api/api.service';
-import { WhiteLabelProvider } from '@services/api/providers/white-label/white-label-provider';
+import { DevQuestProvider } from '@services/api/providers/dev-quest/dev-quest-provider.service';
 import { LogService } from '@services/log.service';
 import { PKCEService } from '@services/pkce.service';
 import { UtilsService } from '@services/utils.service';
@@ -15,7 +15,7 @@ import { AuthState } from './auth.state';
   providedIn: 'root',
 })
 export class AuthenticationService extends ApiService {
-  protected provider = inject(WhiteLabelProvider);
+  protected provider = inject(DevQuestProvider);
 
   private _utils: UtilsService = inject(UtilsService);
 

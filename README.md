@@ -1,4 +1,4 @@
-# White Label (Primeng)
+# Dev Quest
 
 ## Prerequisites:
 
@@ -131,10 +131,10 @@ Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To u
 
 ### Local, QA and Production Builds
 
-- Run `ng build` to build the project with the default configuration (development). The build artifacts will be stored in the `dist/white-label-dev` directory.
-- Run `ng build --configuration=qa` to build the project for QA environment. The build artifacts will be stored in the `dist/white-label-qa` directory.
+- Run `ng build` to build the project with the default configuration (development). The build artifacts will be stored in the `dist/dev-quest-dev` directory.
+- Run `ng build --configuration=qa` to build the project for QA environment. The build artifacts will be stored in the `dist/dev-quest-qa` directory.
 - Run `ng build --configuration=production` to build the project for Production environment. The build artifacts will be stored in the `dist/anki-app-production` directory.
-- Run `ng build --configuration=cf` to build the project for Cloud Foundry environment. The build artifacts will be stored in the `dist/white-label-cf` directory.
+- Run `ng build --configuration=cf` to build the project for Cloud Foundry environment. The build artifacts will be stored in the `dist/dev-quest-cf` directory.
 
 ### Managing Dependencies
 
@@ -152,13 +152,13 @@ To build and run the application in a Docker container, use the following comman
 Build the Docker image:
 
 ```bash
-docker build -t white-label .
+docker build -t dev-quest .
 ```
 
 Run the Docker container:
 
 ```bash
-docker run -d -p 4200:4200 white-label
+docker run -d -p 4200:4200 dev-quest
 ```
 
 ---
@@ -170,11 +170,11 @@ Make sure you got a _manifest.yml_ inside your root project.
 ```yaml
 ---
 applications:
-  - name: white-label
+  - name: dev-quest
     memory: 512M
     disk_quota: 1024M
     instances: 1
-    path: ./dist/white-label-cf
+    path: ./dist/dev-quest-cf
     buildpacks:
       - nodejs_buildpack
     command: node server/server.mjs
@@ -191,7 +191,7 @@ cf push
 
 ## Building and Pushing Image to Google Artifact Registry
 
-Follow these steps to build and push the **White Label Fronted** Docker image to **Google Artifact Registry**.
+Follow these steps to build and push the **Dev Quest Fronted** Docker image to **Google Artifact Registry**.
 
 ### Download the Service Account Key
 
@@ -236,7 +236,7 @@ docker build --platform=linux/amd64 -t europe-west12-docker.pkg.dev/<project-id>
 Replace the placeholders:
 
 - `<project-id>`: Your Google Cloud Project ID (e.g., syscons-lab-gcp).
-- `<repository-name>`: The name of your Artifact Registry repository (e.g., white-label).
+- `<repository-name>`: The name of your Artifact Registry repository (e.g., dev-quest).
 - `<image-name>`: The name you want to give to the image (e.g., base-openjdk-gcloud).
 - `<tag>`: The version or tag of the image (e.g., latest or v1.0).
 - `<Dockerfile>`: The relative path to your Dockerfile (e.g., base-docker-image/base-openjdk-gcloud.Dockerfile).
@@ -244,7 +244,7 @@ Replace the placeholders:
 **Example:**
 
 ```bash
-docker build --platform=linux/amd64 -t europe-west12-docker.pkg.dev/syscons-lab-gcp/white-label/app-white-label-fe:latest -f docker/prod/Dockerfile .
+docker build --platform=linux/amd64 -t europe-west12-docker.pkg.dev/syscons-lab-gcp/dev-quest/app-dev-quest-fe:latest -f docker/prod/Dockerfile .
 ```
 
 ### Push the Docker Image to Google Artifact Registry
@@ -254,7 +254,7 @@ Once the image has been built, push it to Artifact Registry using the following 
 **Example:**
 
 ```bash
-docker push europe-west12-docker.pkg.dev/syscons-lab-gcp/white-label/app-white-label-fe:latest
+docker push europe-west12-docker.pkg.dev/syscons-lab-gcp/dev-quest/app-dev-quest-fe:latest
 ```
 
 ---

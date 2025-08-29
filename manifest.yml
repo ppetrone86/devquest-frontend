@@ -1,9 +1,9 @@
 applications:
-  - name: white-label
+  - name: dev-quest
     memory: 512M
     disk_quota: 1024M
     instances: 1
-    path: ./dist/white-label-cf
+    path: ./dist/dev-quest-cf
     buildpacks:
       - nodejs_buildpack
     command: node server/server.mjs

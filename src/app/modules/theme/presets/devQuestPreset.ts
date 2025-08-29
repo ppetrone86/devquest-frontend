@@ -2,10 +2,10 @@ import { definePreset } from '@primeng/themes';
 import Aura from '@primeng/themes/aura';
 
 /**
- * Syscons preset based on PrimeNG Aura.
+ * Dev  Quest preset based on PrimeNG Aura.
  * Keep ONLY theme data here — no framework imports, no side effects.
  */
-export const SysconsPreset = definePreset(Aura, {
+export const DevQuestPreset = definePreset(Aura, {
   semantic: {
     primary: {
       50: '#FFF9E6',

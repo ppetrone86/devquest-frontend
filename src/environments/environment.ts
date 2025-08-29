@@ -3,7 +3,7 @@ export const environment = {
   enableLogging: true,
   dryRun: false,
   appSettings: {
-    title: 'White Label',
+    title: 'Dev Quest',
     defaultRoutes: {
       fallbackAfterDeniedAccess: '/not-found-page',
       fallbackAfterNotFound: '/not-found-page',
@@ -20,7 +20,7 @@ export const environment = {
     },
   },
   api: {
-    whiteLabel: {
+    devQuest: {
       url: 'http://localhost:8080',
       clientId: 'wlb',
       clientSecret: 'wlb',

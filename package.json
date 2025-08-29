@@ -1,5 +1,5 @@
 {
-  "name": "white-label",
+  "name": "dev-quest",
   "version": "0.0.1",
   "scripts": {
     "build-themes": "sass --update src/assets/styles/themes/syscons-light/theme.scss:src/assets/styles/themes/syscons-light/theme.css && sass --update src/assets/styles/themes/syscons-dark/theme.scss:src/assets/styles/themes/syscons-dark/theme.css",
@@ -10,7 +10,7 @@
     "test": "./node_modules/.bin/ng test",
     "lint": "ng lint",
     "prepare": "husky",
-    "serve:ssr:whiteLabel": "node dist/whiteLabel/server/server.mjs"
+    "serve:ssr:devQuest": "node dist/devQuest/server/server.mjs"
   },
   "private": true,
   "dependencies": {

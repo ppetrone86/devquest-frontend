@@ -3,7 +3,7 @@ export const environment = {
   enableLogging: false,
   dryRun: false,
   appSettings: {
-    title: 'White Label',
+    title: 'Dev Quest',
     defaultRoutes: {
       fallbackAfterDeniedAccess: '/not-found-page',
       fallbackAfterNotFound: '/not-found-page',
@@ -20,11 +20,11 @@ export const environment = {
     },
   },
   api: {
-    whiteLabel: {
-      url: 'https://white-label-backend.white-label.svc.cluster.local:8080',
+    devQuest: {
+      url: 'https://dev-quest-backend.dev-quest.svc.cluster.local:8080',
       clientId: 'wlb',
       clientSecret: 'wlb',
-      redirectURI: 'https://white-label-frontend.c5ecca2.kyma.ondemand.com/auth-processing',
+      redirectURI: 'https://dev-quest-frontend.c5ecca2.kyma.ondemand.com/auth-processing',
       refreshTokenOffset: 120,
     },
     dummyJsonApi: {

@@ -1,7 +1,7 @@
 import { inject, Injectable } from '@angular/core';
 import { Chat, ChatMessage, ChatStatus } from '@modules/ai/chat.model';
 import { ApiService } from '@services/api/api.service';
-import { WhiteLabelProvider } from '@services/api/providers/white-label/white-label-provider';
+import { DevQuestProvider } from '@services/api/providers/dev-quest/dev-quest-provider.service';
 import { environment } from '@src/environments/environment';
 import { map, Observable, of } from 'rxjs';
 import { v4 as uuidv4 } from 'uuid';
@@ -10,7 +10,7 @@ import { v4 as uuidv4 } from 'uuid';
   providedIn: 'root',
 })
 export class ChatService extends ApiService {
-  protected provider = inject(WhiteLabelProvider);
+  protected provider = inject(DevQuestProvider);
 
   private _dryRun = environment.dryRun;
   private _mockChats = '../../../assets/data/mock/ai.chats.json';

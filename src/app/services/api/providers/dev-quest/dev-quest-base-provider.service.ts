@@ -6,6 +6,6 @@ import { environment } from '@src/environments/environment';
   providedIn: 'root',
 })
 export class DevQuestBaseProvider extends ApiProvider {
-  // Base URL for White Label API
-  protected readonly baseUrl = `${environment.api.whiteLabel.url}`;
+  // Base URL for Dev Quest API
+  protected readonly baseUrl = `${environment.api.devQuest.url}`;
 }

@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "white-label": {
+    "dev-quest": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -39,7 +39,7 @@
           "builder": "@angular-devkit/build-angular:application",
           "options": {
             "allowedCommonJsDependencies": ["deepmerge", "crypto-js"],
-            "outputPath": "dist/white-label",
+            "outputPath": "dist/dev-quest",
             "index": "src/index.html",
             "browser": "src/main.ts",
             "polyfills": ["zone.js", "@angular/localize/init"],
@@ -62,7 +62,7 @@
           },
           "configurations": {
             "production": {
-              "outputPath": "dist/white-label-prod",
+              "outputPath": "dist/dev-quest-prod",
               "fileReplacements": [
                 {
                   "replace": "src/environments/environment.ts",
@@ -84,7 +84,7 @@
               "outputHashing": "all"
             },
             "qa": {
-              "outputPath": "dist/white-label-qa",
+              "outputPath": "dist/dev-quest-qa",
               "fileReplacements": [
                 {
                   "replace": "src/environments/environment.ts",
@@ -106,7 +106,7 @@
               "outputHashing": "all"
             },
             "cf": {
-              "outputPath": "dist/white-label-cf",
+              "outputPath": "dist/dev-quest-cf",
               "fileReplacements": [
                 {
                   "replace": "src/environments/environment.ts",
@@ -128,7 +128,7 @@
               "outputHashing": "all"
             },
             "kyma": {
-              "outputPath": "dist/white-label-kyma",
+              "outputPath": "dist/dev-quest-kyma",
               "fileReplacements": [
                 {
                   "replace": "src/environments/environment.ts",
@@ -150,7 +150,7 @@
               "outputHashing": "all"
             },
             "development": {
-              "outputPath": "dist/white-label-dev",
+              "outputPath": "dist/dev-quest-dev",
               "optimization": false,
               "extractLicenses": false,
               "sourceMap": true
@@ -162,13 +162,13 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "white-label:build:production"
+              "buildTarget": "dev-quest:build:production"
             },
             "qa": {
-              "buildTarget": "white-label:build:qa"
+              "buildTarget": "dev-quest:build:qa"
             },
             "development": {
-              "buildTarget": "white-label:build:development"
+              "buildTarget": "dev-quest:build:development"
             }
           },
           "defaultConfiguration": "development"

@@ -12,7 +12,7 @@ export class FormService {
   private _dryRun: boolean = environment.dryRun;
   private _http: HttpClient = inject(HttpClient);
 
-  private _baseUrl: string = environment.api.whiteLabel.url;
+  private _baseUrl: string = environment.api.devQuest.url;
 
   private _defaultMockForm = 'assets/data/mock/forms/form-user-registration.json';
   private _mockForms = new Map<string, string>([

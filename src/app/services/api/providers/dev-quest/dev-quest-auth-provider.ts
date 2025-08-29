@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { AuthState } from '@modules/auth/auth.state';
-import { DevQuestBaseProvider } from '@services/api/providers/white-label/dev-quest-base-provider.service';
+import { DevQuestBaseProvider } from '@services/api/providers/dev-quest/dev-quest-base-provider.service';
 import { LogService } from '@services/log.service';
 import { environment } from '@src/environments/environment';
 import { Observable } from 'rxjs';
@@ -9,9 +9,9 @@ import { Observable } from 'rxjs';
   providedIn: 'root',
 })
 export class DevQuestAuth2Provider extends DevQuestBaseProvider {
-  private readonly _clientId: string = environment.api.whiteLabel.clientId;
-  private readonly _redirectUri: string = environment.api.whiteLabel.redirectURI;
-  private readonly _refreshTokenOffset = environment.api.whiteLabel.refreshTokenOffset;
+  private readonly _clientId: string = environment.api.devQuest.clientId;
+  private readonly _redirectUri: string = environment.api.devQuest.redirectURI;
+  private readonly _refreshTokenOffset = environment.api.devQuest.refreshTokenOffset;
 
   constructor() {
     super();

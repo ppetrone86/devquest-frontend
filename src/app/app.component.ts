@@ -2,7 +2,7 @@ import { isPlatformBrowser } from '@angular/common';
 import { Component, inject, OnInit, PLATFORM_ID } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { AuthenticationService } from '@modules/auth/authentication.service';
-import { SysconsPreset } from '@modules/theme/presets/syscons.preset';
+import { DevQuestPreset } from '@modules/theme/presets/devQuestPreset';
 import { init } from '@modules/theme/theme.actions';
 import { Store } from '@ngrx/store';
 import { TranslateModule } from '@ngx-translate/core';
@@ -22,11 +22,11 @@ export class AppComponent implements OnInit {
   private _i18sService: I18nService = inject(I18nService);
   private _authenticationService: AuthenticationService = inject(AuthenticationService);
 
-  title = 'White Label';
+  title = 'Dev Quest';
 
   constructor() {
     this._config.theme.set({
-      preset: SysconsPreset,
+      preset: DevQuestPreset,
       options: {
         darkModeSelector: "[data-theme='dark']",
         cssLayer: {
